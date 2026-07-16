@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nāṭyaśāstra &amp; the 108 Karaṇas — Part IV: Neuroscientific / Somatic</title>
+<style>
+  :root{
+    --bg:#120a08;
+    --bg-alt:#1b1210;
+    --panel:#1f1613;
+    --border:#3a2620;
+    --gold:#c9a24b;
+    --gold-bright:#e6c877;
+    --crimson:#8f2334;
+    --crimson-bright:#b3324a;
+    --text:#e9ddd0;
+    --text-dim:#b8a898;
+    --text-faint:#8a7a6c;
+    --classical:#5a9b7a;
+    --modern:#4a8fc0;
+    --synthesis:#c9a24b;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Spectral','EB Garamond',Georgia,serif;
+    font-size:17px;
+    line-height:1.7;
+  }
+  h1,h2,h3,h4,.tabbar,.eyebrow{font-family:'Cinzel',Georgia,serif;}
+  .sanskrit{font-family:'Noto Serif Devanagari','Spectral',serif;font-style:italic;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px 120px;}
+  .eyebrow{
+    text-align:center;letter-spacing:.14em;text-transform:uppercase;
+    font-size:.78rem;color:var(--gold);padding:26px 0 6px;
+  }
+  h1.title{
+    text-align:center;font-size:1.85rem;line-height:1.35;
+    color:var(--gold-bright);margin:6px 0 4px;font-weight:600;
+  }
+  h2.subtitle{
+    text-align:center;font-size:1.05rem;color:var(--text-dim);
+    font-weight:400;font-family:'Spectral',serif;font-style:italic;
+    margin:0 0 22px;max-width:760px;margin-left:auto;margin-right:auto;
+  }
+  .tabbar{
+    position:sticky;top:0;z-index:40;background:var(--bg-alt);
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    overflow-x:auto;white-space:nowrap;padding:10px 14px;
+    display:flex;gap:6px;justify-content:flex-start;
+  }
+  .tabbar a{
+    color:var(--text-dim);text-decoration:none;font-size:.72rem;
+    letter-spacing:.06em;text-transform:uppercase;padding:8px 12px;
+    border:1px solid var(--border);border-radius:3px;flex:0 0 auto;
+  }
+  .tabbar a.active{color:var(--bg);background:var(--gold);border-color:var(--gold);}
+  .tabbar a:hover:not(.active){border-color:var(--gold);color:var(--gold-bright);}
+  .lede{
+    padding:22px 0 4px;font-size:1.02rem;color:var(--text-dim);
+  }
+  .lede p{margin:0 0 16px;}
+  h2.sec{
+    margin:52px 0 14px;font-size:1.28rem;color:var(--gold-bright);
+    border-bottom:1px solid var(--border);padding-bottom:10px;
+    font-weight:600;line-height:1.4;
+  }
+  h3.sub{
+    margin:30px 0 10px;font-size:1.02rem;color:var(--crimson-bright);
+    font-weight:600;
+  }
+  p{margin:0 0 15px;}
+  .tag{
+    display:inline-block;font-family:'Cinzel',Georgia,serif;
+    font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:2px 7px;border-radius:2px;margin:0 2px;white-space:nowrap;
+  }
+  .tag.classical{background:rgba(90,155,122,.15);color:var(--classical);border:1px solid rgba(90,155,122,.4);}
+  .tag.modern{background:rgba(74,143,192,.15);color:var(--modern);border:1px solid rgba(74,143,192,.4);}
+  .tag.synthesis{background:rgba(201,162,75,.15);color:var(--synthesis);border:1px solid rgba(201,162,75,.4);}
+  table{
+    width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:.92rem;
+  }
+  th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top;}
+  th{background:var(--panel);color:var(--gold);font-family:'Cinzel',Georgia,serif;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;}
+  td{color:var(--text-dim);}
+  .tblnote{font-size:.74rem;color:var(--text-faint);margin:-14px 0 22px;text-align:right;font-style:italic;}
+  .rqbox{
+    background:var(--panel);border-left:3px solid var(--crimson-bright);
+    border-radius:2px;padding:16px 20px;margin:20px 0 24px;
+  }
+  .rqbox .rqid{
+    font-family:'Cinzel',Georgia,serif;color:var(--crimson-bright);
+    font-size:.78rem;letter-spacing:.06em;margin-bottom:8px;display:block;
+  }
+  .rqbox p{margin:0 0 10px;color:var(--text);}
+  .rqstatus{font-size:.86rem;color:var(--text-faint);font-style:italic;margin:0;}
+  .glossary td:first-child{color:var(--gold-bright);font-weight:600;white-space:nowrap;}
+  ol.reglist{padding-left:22px;color:var(--text-dim);}
+  ol.reglist li{margin-bottom:6px;}
+  .bib li{margin-bottom:10px;color:var(--text-dim);}
+  .bib b{color:var(--gold-bright);}
+  hr.div{border:none;border-top:1px solid var(--border);margin:56px 0;}
+  .roadmap{background:var(--panel);border:1px solid var(--border);padding:18px 22px;border-radius:3px;margin:16px 0;}
+  .roadmap h4{margin:0 0 8px;color:var(--gold-bright);font-size:.95rem;}
+  .roadmap p{color:var(--text-dim);margin:0;}
+  .caution{
+    background:rgba(143,35,52,.08);border:1px solid rgba(143,35,52,.35);
+    padding:14px 18px;border-radius:3px;margin:16px 0 22px;color:var(--text-dim);font-size:.94rem;
+  }
+</style>
+</head>
+<body>
+<div class="eyebrow">Cultural Musings · Series Extension · 108 Karaṇas / VAK</div>
+<h1 class="title">Nāṭyaśāstra and the 108 Karaṇas: The Neuroscientific and Somatic Substrate</h1>
+<h2 class="subtitle">Part IV — Twenty-Five Tests of the Karaṇa-Rasa Claim Against Systems Neuroscience, Psychophysiology, and Motor Science</h2>
+
+<div class="tabbar">
+<a href="#">I · Doctrinal / Textual</a>
+<a href="#">II · Historical Transmission</a>
+<a href="#">III · Psychological / EQ Framework</a>
+<a href="#" class="active">IV · Neuroscientific / Somatic</a>
+<a href="#">V · Educational / Pedagogical Loss</a>
+<a href="#">VI · Epistemic Access Barrier</a>
+</div>
+
+<div class="wrap">
+<div class="lede">
+<p>Part III closed by handing four specific, unresolved measurement problems forward: RQ I06's
+proposal that alexithymia should show a physiologically measurable — not merely self-reported —
+deficit in rasa-completion; RQ I09's question of whether DBT-style distress tolerance and
+sādhāraṇīkaraṇa-mediated aesthetic distance share one regulatory mechanism or two, resolvable only
+by joint physiological measurement; RQ I10's prediction of a dissociation between preserved
+rasa-recognition and selectively blunted camatkāra in anhedonic depression, framed explicitly around
+reward-circuit neuroscience; and RQ I11's proposal that sāttvika-bhāva production could serve as an
+objective, autonomically measured differential marker between PTSD numbing and depressive anhedonia.
+None of these four questions can be answered by further reading of the psychological literature Part
+III already surveyed. Each requires a specific neuroscience or psychophysiology literature, a
+specific instrument, and a specific measurable signal. This module supplies that literature,
+instrument by instrument, in the same discipline Part III applied to the EQ literature: naming what
+a given neuroscience construct actually establishes, mapping it against a specific classical
+construct, stating the fit precisely, and stating the break-point precisely rather than letting a
+structural resonance imply more than it earns.</p>
+<p>This module also does not repeat Part I's D1 (neuroscience) and D10 (medical sciences)
+appendices, which surveyed this territory at breadth-first, orienting level and explicitly deferred
+the deeper, instrument-specific engagement to this Part. Where this module touches material Part I's
+appendices already named — the amygdala, polyvagal theory, mirror neurons, entrainment — it does so
+only to take the argument to the level Part I's own text flagged as future work: not whether a
+construct exists, but what apparatus would actually measure it in a karaṇa-based context, what that
+apparatus has already shown in adjacent domains, and what a positive or negative finding would
+specifically mean for the doctrinal claims Part I established on textual grounds alone.</p>
+</div>
+
+<h2 class="sec">01 · LeDoux's Amygdala-Centred Fear Circuit and the Sthāyibhāva Postulate's Neural Plausibility</h2>
+<p>Joseph LeDoux's programme of research on the amygdala's role in fear learning and expression,
+running from the original discovery of a direct thalamo-amygdala "low road" bypassing cortical
+processing through his later, more cautious reformulation distinguishing defensive survival circuits
+from subjective feeling, remains the single most extensively replicated finding in affective
+neuroscience: a rapid, largely automatic subcortical pathway registers threat-relevant stimuli and
+initiates defensive response before cortical, deliberative processing has completed its own slower
+analysis of the same stimulus. This is <span class="tag modern">Modern Scholarship</span>, and it
+bears directly on Part I's Section 2 sthāyibhāva postulate — that eight (later nine, with śānta)
+permanent emotional dispositions exist as a substrate from which a rasa is aesthetically activated —
+because LeDoux's later work specifically argues against equating a defensive circuit's activation
+with the subjective experience of "fear" as a discrete, unitary state, a distinction this section
+treats as directly relevant to whether sthāyibhāva should be read as a claim about discrete neural
+circuits or about something at a different level of description entirely.</p>
+<p>The relevant precision this section adds, not present in Part I's D1 survey, is LeDoux's own
+explicit separation of three levels that popular science writing routinely collapses: the survival
+circuit itself (phylogenetically old, shared broadly across mammals, measurable via lesion and
+optogenetic methods in animal models), the bodily and behavioural response the circuit triggers
+(measurable via autonomic and motor output, the domain Section 05 below takes up specifically), and
+the subjective feeling of fear (a higher-order cortical construction LeDoux argues requires
+working-memory-dependent conscious appraisal and is not identical to circuit activation, however
+tightly correlated the two usually are in practice). Bharata's bhaya (fear) sthāyibhāva, read
+against this three-level distinction, maps most defensibly onto the middle level — the measurable
+bodily-behavioural response — rather than onto either the circuit level (which the text has no
+vocabulary for and could not have addressed) or the subjective-feeling level alone (which the text's
+own emphasis on vibhāva-anubhāva as publicly legible, transmissible signs already treats as
+inseparable from behavioural expression, per Part I Section 2.2).</p>
+
+<h3 class="sub">1.1 Why Eight Discrete Circuits Should Not Be Expected, and What Should Be Expected Instead</h3>
+<p>A literal reading of the sthāyibhāva doctrine — eight or nine dedicated, anatomically separable
+emotion circuits corresponding one-to-one with rati, hāsa, śoka, krodha, utsāha, bhaya, jugupsā,
+vismaya, and śama — finds no support in the circuit-level neuroscience literature, and this section
+states that directly rather than searching for a strained mapping. LeDoux's own broader body of
+work, alongside Jaak Panksepp's independently developed affective-neuroscience programme identifying
+seven primary-process emotional systems (SEEKING, RAGE, FEAR, LUST, CARE, PANIC/GRIEF, PLAY) through
+direct brain-stimulation studies in animals, both converge on a smaller number of phylogenetically
+conserved core systems than Bharata's eight-fold taxonomy, with considerable definitional slippage
+even between LeDoux's and Panksepp's own systems. Panksepp's PANIC/GRIEF system in particular has no
+clean single-term sthāyibhāva equivalent, while Bharata's hāsa (mirth) and vismaya (wonder) have no
+clean Panksepp-system equivalent, a genuine two-way mismatch this section names rather than resolves
+by loose analogy.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N01</span>
+<p>Using a forced-choice mapping task administered to affective-neuroscience specialists blind to
+the sthāyibhāva taxonomy's source, would experts asked to sort Bharata's eight sthāyibhāvas against
+Panksepp's seven primary-process systems and LeDoux's three-level fear-circuit framework converge on
+a stable many-to-many mapping, or would inter-rater agreement be low enough to indicate that the
+sthāyibhāva taxonomy is organized along a fundamentally different axis (functional-dramaturgical
+rather than circuit-anatomical) than either modern framework?</p>
+<p class="rqstatus">Open. A comparatively low-cost expert-elicitation study; would clarify whether
+any future neuroimaging test of sthāyibhāva-specific activation (RQ N06 below) is targeting a
+coherent hypothesis in the first place.</p>
+</div>
+
+<h2 class="sec">02 · Constructionist Emotion Theory and the Limits of the Discrete-Rasa Assumption</h2>
+<p>Lisa Feldman Barrett's theory of constructed emotion, developed substantially against the
+discrete-emotion tradition LeDoux's earlier work and Paul Ekman's basic-emotion programme (already
+discussed in Part I, Section 2.1, on textual-comparative grounds) both broadly share, argues from a
+large body of meta-analytic and neuroimaging evidence that no reliable, reproducible one-to-one
+mapping exists between specific discrete emotion categories and specific, dedicated brain regions or
+specific, consistent peripheral physiological signatures — instead proposing that emotions are
+constructed, moment to moment, from more basic ingredients (interoceptive signals from the body,
+conceptual knowledge, and situated context) rather than triggered as fixed, pre-formed packages.
+This is <span class="tag modern">Modern Scholarship</span>, and it is the single most direct
+empirical challenge available in the current neuroscience literature to any strong reading of
+Bharata's eight-fold sthāyibhāva taxonomy as describing eight discrete, biologically natural
+kinds.</p>
+<p>The constructionist challenge, taken seriously rather than dismissed, actually sharpens rather
+than undermines this series' own methodological caution (Part I, Section 7.1's "premature
+equivalence" discipline): if emotion categories themselves are, on Barrett's account, culturally and
+conceptually scaffolded constructions built from more basic affective ingredients (core affect,
+characterized minimally by valence and arousal, per Barrett's own dimensional-affect starting point)
+rather than natural biological kinds, then Bharata's eight-fold taxonomy should be read as one
+particular, historically and culturally specific scheme for carving up the same underlying affective
+space constructionist theory describes — a claim considerably more defensible, and more interesting,
+than the claim that Bharata independently discovered eight universal neural natural kinds sixteen
+centuries before neuroscience existed.</p>
+
+<h3 class="sub">2.1 A Constructionist Reading of Vibhāva as Conceptual Scaffolding</h3>
+<p>Barrett's theory assigns a specific causal role to context and prior conceptual knowledge in
+constructing a given emotional instance — a raised heart rate and reduced peripheral temperature
+will be constructed as "fear" in one context and "excitement" in another, depending substantially on
+what concept the perceiving mind has available and what the situation cues. This maps with
+unexpected precision onto Part I's vibhāva doctrine (Section 2.2): vibhāva is, in Bharata's own
+architecture, precisely the situational-causal information (the ālambana-vibhāva, the object; the
+uddīpana-vibhāva, the stimulating circumstance) that determines which emotion a given bodily state
+will be read as expressing, both by the performer constructing the expression and by the spectator
+interpreting it. Offered here as <span class="tag synthesis">AI Synthesis</span>: constructionist
+theory supplies a mechanistic account of exactly the function vibhāva already performs in Bharata's
+own system — context-dependent categorization of an underlying affective state — a considerably
+closer and more precisely specified structural fit than the discrete-emotion/sthāyibhāva comparison
+in Section 1 above, precisely because constructionism's emphasis on conceptual, contextual
+scaffolding is structurally what vibhāva already is.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N02</span>
+<p>Would systematically varying only the vibhāva context surrounding an identical karaṇa-based
+movement sequence and identical sāttvika-bhāva production (holding the performer's actual bodily
+signal constant while changing only the narrative framing supplied to spectators beforehand) produce
+measurably different rasa attributions and different self-reported camatkāra, in a manner consistent
+with Barrett's construction account and inconsistent with a strong discrete-emotion reading in which
+the "true" underlying sthāyibhāva should be recognizable regardless of contextual framing?</p>
+<p class="rqstatus">Open. A directly executable behavioural study requiring no neuroimaging; could
+be run as a standalone precursor to any of the neuroimaging studies proposed later in this
+module.</p>
+</div>
+
+<h2 class="sec">03 · The Mirror Neuron System and Anubhāva as Embodied Simulation</h2>
+<p>Giacomo Rizzolatti and Vittorio Gallese's discovery, in macaque premotor cortex, of neurons that
+fire both when an animal performs a specific goal-directed action and when it observes another agent
+performing the same action, and the subsequent (considerably more methodologically contested, a
+caveat this section states directly rather than glossing over) extension of a homologous "mirror
+system" to human premotor and parietal cortex via fMRI and TMS studies, offers this module's most
+direct neural candidate mechanism for how a spectator perceives and, on some readings, partially
+embodies a performer's anubhāva. This is <span class="tag modern">Modern Scholarship</span> at the
+macaque single-unit level and more methodologically contested Modern Scholarship at the human fMRI
+level, a distinction Section 3.1 below takes up directly.</p>
+<p>Vittorio Gallese's own extension of the mirror-neuron finding into a broader "embodied
+simulation" theory of social cognition — the proposal that understanding another's action, emotion,
+or sensation substantially involves an automatic, non-inferential simulation of that state in one's
+own sensorimotor and interoceptive systems, rather than purely propositional, inferential
+mentalizing — offers a considerably richer theoretical resource for this comparison than the
+narrower single-neuron finding alone. Embodied simulation theory, applied to anubhāva specifically,
+proposes a mechanistic account of exactly what Part I's Section 2.2 described only functionally: a
+spectator's recognition of a performer's grief-anubhāva (specific gaze pattern, specific hand
+positioning, specific gait) would, on this account, involve a partial, automatic activation of the
+spectator's own motor and interoceptive representations for producing that same grief-anubhāva,
+offering a candidate mechanism for how sādhāraṇīkaraṇa's generalization process (Part I, Section
+3.1) might be neurally implemented rather than merely textually asserted.</p>
+
+<h3 class="sub">3.1 The Documented Controversy This Section Must Not Elide</h3>
+<p>The human mirror-neuron literature has, since roughly the early 2010s, become considerably more
+contested within cognitive neuroscience than its popular-science reception suggests, and this
+section names the controversy directly rather than building on the finding as though it were
+uncontroversial. Gregory Hickok's sustained critique argues that much human fMRI "mirror system"
+evidence is equally consistent with a more general action-observation network involved in predicting
+and monitoring observed action without that network necessarily supporting the specific, strong
+claims (direct action *understanding* via simulation, as opposed to mere action *prediction*)
+mirror-neuron theory's more ambitious proponents have drawn from it, and that direct single-unit
+confirmation of mirror-neuron-like response properties in humans remains limited to a small number
+of intracranial recording studies conducted in clinical (epilepsy surgery) populations rather than
+the general population. Applied to this section's anubhāva-simulation comparison, this means the
+embodied-simulation account offered above should be read as a plausible, actively researched
+candidate mechanism rather than an established one, a qualification this section states with the
+same directness Part I's Section 7.1 discipline requires throughout this series.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N03</span>
+<p>Using EEG mu-rhythm suppression (a more accessible, if less spatially precise, proxy for
+sensorimotor mirror-system engagement than fMRI) recorded from trained abhinaya performers and from
+naive spectators viewing identical karaṇa sequences, would performers show greater mu-suppression
+than naive spectators when merely observing (not performing) the sequence — consistent with
+expertise-dependent tuning of the mirror system already documented in the dance-neuroscience
+literature discussed further in Section 12 — and would mu-suppression magnitude in naive spectators
+predict their subsequent rasa-recognition accuracy?</p>
+<p class="rqstatus">Open. EEG mu-suppression paradigms are comparatively low-cost and
+well-established methodologically, making this one of the more immediately executable neuroimaging
+proposals in this module.</p>
+</div>
+
+<h2 class="sec">04 · Interoceptive Predictive Processing and the Neural Registration of Vibhāva</h2>
+<p>Anil Seth's and Hugo Critchley's programme of work on interoceptive predictive processing,
+building on Bud Craig's earlier anatomical mapping of interoceptive signalling through lamina I
+spinothalamic pathways to the posterior and then anterior insula, proposes that subjective feeling
+states arise from the brain's continuous, predictive modelling of the body's internal physiological
+state, compared against actual afferent interoceptive signal, with the resulting prediction-error
+signal (and its resolution) constituting, on this account, the neural substrate of felt emotion
+itself — a considerably more mechanistically specified successor to the older James-Lange
+peripheral-feedback theory of emotion Part I's D1 appendix likely gestured toward only briefly. This
+is <span class="tag modern">Modern Scholarship</span>, associated substantially with Seth's
+"interoceptive inference" framework and Sarah Garfinkel's parallel work on interoceptive accuracy
+measurement.</p>
+<p>This literature bears on Part I's vibhāva doctrine in a manner distinct from, and complementary
+to, Section 2's constructionist framing above: where constructionism emphasizes conceptual and
+contextual scaffolding, interoceptive predictive processing supplies the specific afferent-signal
+machinery that scaffolding operates on. A vibhāva, on this reading, is not merely contextual
+information but a cue that updates the brain's generative model of expected bodily state, with a
+mismatch between predicted and actual interoceptive signal (interoceptive prediction error)
+constituting, on Seth's account, a core computational event in emotional experience — offered here
+as <span class="tag synthesis">AI Synthesis</span> extending the vibhāva-as-scaffolding argument
+(Section 2.1) to the specific level of interoceptive prediction error as vibhāva's plausible
+computational function, rather than context in the merely conceptual sense alone.</p>
+
+<h3 class="sub">4.1 Interoceptive Accuracy as a Candidate Sahṛdaya-Readiness Variable</h3>
+<p>Garfinkel's heartbeat-counting and heartbeat-discrimination paradigms, now a standard methodology
+for measuring individual differences in interoceptive accuracy (a person's objectively measured
+ability to detect their own internal bodily signals, distinguished in Garfinkel's own
+three-dimensional framework from interoceptive sensibility, a person's self-reported confidence in
+that ability, and interoceptive awareness, the metacognitive correspondence between the two), offers
+a directly testable individual-difference variable this module proposes, as <span class="tag
+synthesis">AI Synthesis</span>, as a candidate predictor of sahṛdaya-readiness distinct from and
+complementary to Part III's RQ I07 mentalization-capacity proposal: if sahṛdaya-hood depends
+substantially on accurately registering one's own vibhāva-triggered internal state as a precondition
+for that state's generalization via sādhāraṇīkaraṇa (Part I, Section 3.1), and interoceptive
+accuracy is precisely a validated, objectively measurable index of exactly that registration
+capacity, individual variation in heartbeat-counting-task performance should, on this hypothesis,
+predict individual variation in camatkāra completion independent of general emotion-recognition
+ability.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N04</span>
+<p>Do individuals scoring in the top and bottom terciles of a standard heartbeat-discrimination
+interoceptive-accuracy task show correspondingly different self-reported camatkāra and different
+physiological reactivity (per Section 05's proposed protocol) when viewing identical karaṇa-based
+performance stimuli, and does this relationship hold after statistically controlling for general
+emotion-recognition ability (MSCEIT scores, per Part III Section 1), isolating an
+interoception-specific contribution distinct from general emotional competence?</p>
+<p class="rqstatus">Open. Interoceptive-accuracy tasks are well-standardized and comparatively brief
+to administer, making this a low-marginal-cost addition to any of this module's other proposed
+spectator studies.</p>
+</div>
+
+<h2 class="sec">05 · Polyvagal Theory Operationalized: Heart-Rate Variability and Electrodermal Activity as Sāttvika-Bhāva Instruments</h2>
+<p>Part I's D10.4 appendix and Part III's Section 11 both invoked Stephen Porges's polyvagal theory
+with an explicit methodological caution this section inherits and now makes operational rather than
+merely conceptual: polyvagal theory's specific claims about a phylogenetically ordered hierarchy of
+autonomic response (ventral-vagal social engagement, sympathetic mobilization, dorsal-vagal
+shutdown) remain more contested within cardiovascular and autonomic physiology proper than the
+theory's considerable influence in clinical and popular psychology suggests, particularly regarding
+the specific neuroanatomical claims about distinct ventral and dorsal vagal pathways. This section,
+following that caution, treats polyvagal theory's broad clinical taxonomy as a heuristically useful
+organizing frame while relying, for actual measurement proposals, on the more methodologically
+uncontroversial underlying signals: heart-rate variability (HRV, particularly respiratory sinus
+arrhythmia as a vagal-tone proxy) and electrodermal activity (EDA, a sympathetically-mediated
+skin-conductance signal), both <span class="tag modern">Modern Scholarship</span> with decades of
+standardized psychophysiological measurement practice behind them, independent of whichever
+theoretical framework (polyvagal or more conventional autonomic-balance models) is used to interpret
+the resulting signal.</p>
+<p>Applied directly to Part I's Section 6 sāttvika-bhāva taxonomy — the eight involuntary markers
+(stambha, sveda, romāñca, svarabheda, vepathu, vaivarṇya, aśru, pralaya) the tradition treats as
+reliable signs of genuine emotional absorption — this section proposes, as <span class="tag
+synthesis">AI Synthesis</span>, a direct instrument mapping distinct from the purely observational
+protocol Part III's Section 11 gestured toward: sveda (perspiration) maps onto EDA directly and with
+unusual mechanistic precision, since EDA is itself a measure of eccrine sweat gland activity;
+vepathu (trembling) and svarabheda (voice-break) map onto measurable electromyographic and
+acoustic-jitter signals respectively; vaivarṇya (pallor) maps onto peripheral vasoconstriction,
+measurable via photoplethysmography; and romāñca (horripilation, goosebumps) maps onto piloerection,
+itself a sympathetically-mediated response with its own dedicated, if less commonly deployed,
+measurement methodology (optical piloerection detection). This is the first section in this module
+offering an essentially complete, off-the-shelf instrument mapping requiring no new instrument
+development — a notably different evidentiary position than nearly every psychometric proposal in
+Part III's Section 5 instrumentation survey, which repeatedly found no existing instrument adequate
+to the classical construct.</p>
+
+<h3 class="sub">5.1 Why This Section's Instrument-Availability Finding Matters for the Series' Overall Argument</h3>
+<p>Part III's Section 26 synthesis identified instrumentation, not mechanism, as this white paper
+series' central recurring gap — fifteen psychological comparisons each finding a genuine structural
+resonance that terminated at the wall of no dedicated measurement tool. This section's finding runs
+in the opposite direction and is stated as such directly: unlike the Rasa Reception Inventory Part
+III's Section 5 proposed as a necessary, not-yet-built psychometric instrument, the
+sāttvika-bhāva/autonomic-signal mapping proposed here requires no new instrument construction at all
+— HRV, EDA, EMG, photoplethysmography, and piloerection detection are all mature, validated,
+commercially available measurement technologies routinely deployed in psychophysiology laboratories,
+meaning the single largest barrier to executing RQ I11 (Part III) and several proposals in this
+module is not instrument development but straightforward study design and recruitment, a materially
+different and more tractable starting position than most of Part III's proposed research
+programme.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N05</span>
+<p>Using a synchronized multi-channel psychophysiological recording protocol (EDA, HRV, facial EMG,
+photoplethysmography) on trained abhinaya performers during live karaṇa-based rasa production, does
+the resulting autonomic signature for each of the nine rasas show a stable, discriminable
+multivariate pattern (testing whether sāttvika-bhāva production is rasa-specific and not merely a
+generic arousal signal), and does the same discriminable pattern appear, at reduced amplitude, in
+naive spectators experiencing high self-reported camatkāra during observation — directly testing the
+coupled-autonomic-response prediction implicit in Part I's D4 entrainment discussion?</p>
+<p class="rqstatus">Open. The most immediately executable neuroimaging-adjacent proposal in this
+entire module, requiring only standard psychophysiology laboratory equipment already common in
+university research settings, with no instrument-development phase required.</p>
+</div>
+
+<h2 class="sec">06 · Mesolimbic Reward Circuitry and Camatkāra: The Neuroimaging Evidence Bearing on RQ I10</h2>
+<p>Part III's Section 10 proposed, on largely theoretical grounds, that camatkāra involves
+reward-circuit engagement dissociable from a rasa's base emotional content, predicting that
+clinically anhedonic individuals should show preserved rasa-recognition alongside selectively
+reduced camatkāra. This section supplies the specific neuroimaging literature that prediction
+depends on. The mesolimbic dopamine pathway — ventral tegmental area projections to nucleus
+accumbens, extensively characterized through decades of both animal (Wolfram Schultz's
+reward-prediction-error single-unit recordings) and human neuroimaging research — is <span
+class="tag modern">Modern Scholarship</span> established well beyond reasonable dispute as the core
+reward-signalling circuit implicated in pleasure, motivation, and, critically for this section,
+aesthetic reward specifically: Anjan Chatterjee's and Oshin Vartanian's neuroaesthetics research
+programme, alongside Edward Vessel's work on the default mode network's involvement in intensely
+moving aesthetic experience (Section 07 below), has directly documented nucleus accumbens and
+orbitofrontal cortex engagement during self-reported peak aesthetic experience across visual art,
+music, and, in a smaller but growing literature, dance-specific stimuli.</p>
+<p>The specific finding most relevant to RQ I10's anhedonia prediction comes from the depression
+neuroimaging literature itself: Diego Pizzagalli's programme of work using probabilistic
+reward-learning tasks (most notably the signal-detection reward-learning paradigm) has repeatedly
+documented that clinically depressed, anhedonic individuals show a specific, measurable blunting of
+reward-prediction-error signalling in ventral striatum, distinguishable from general cognitive or
+perceptual impairment — precisely the dissociation profile RQ I10 requires as its neural substrate.
+This section states directly, as <span class="tag synthesis">AI Synthesis</span> building on
+Pizzagalli's established findings (<span class="tag modern">Modern Scholarship</span>), the specific
+neuroimaging prediction RQ I10's behavioural-level hypothesis implies: an fMRI study contrasting
+anhedonic and non-anhedonic viewers during karaṇa-based performance viewing should show comparable
+activation in regions associated with vibhāva/anubhāva recognition (superior temporal sulcus,
+fusiform regions for body and face processing) alongside selectively blunted ventral striatal
+response specifically during self-reported camatkāra peaks, a considerably more falsifiable and
+mechanistically specific version of RQ I10 than Part III's behavioural-only framing supplied.</p>
+
+<h3 class="sub">6.1 A Necessary Distinction Between Wanting and Liking</h3>
+<p>Kent Berridge's influential distinction, developed across decades of animal-model research,
+between "wanting" (incentive salience, substantially dopaminergic, driving approach and motivation
+toward a reward) and "liking" (the actual hedonic pleasure response, substantially opioid- and
+endocannabinoid-mediated in specific "hedonic hotspot" regions of nucleus accumbens and ventral
+pallidum, distinguishable from dopaminergic wanting both pharmacologically and anatomically)
+supplies a precision this section's camatkāra discussion must not skip past: camatkāra, read against
+Berridge's distinction, is more plausibly aligned with the "liking" component (a consummatory,
+hedonic aesthetic pleasure) than with "wanting" (anticipatory motivational drive toward further
+engagement), though both components are, on Berridge's own account, typically co-activated in real
+reward experiences and only dissociable under specific experimental or pharmacological manipulation.
+This section flags, rather than resolves, whether camatkāra's own textual description (a completed,
+relished aesthetic state, per Part I Section 3.2) corresponds more precisely to Berridge's narrower
+hedonic hotspot activation or to the broader dopaminergic wanting signal, a distinction with direct
+implications for which specific imaging contrast RQ N06 below should target.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N06</span>
+<p>Using a within-subject fMRI design contrasting sustained karaṇa-based performance viewing against
+a matched non-aesthetic control condition, does peak self-reported camatkāra correlate more strongly
+with activation in Berridge-defined hedonic-hotspot regions (ventral pallidum, rostral nucleus
+accumbens shell) or with broader ventral-striatal and midbrain dopaminergic signal more consistent
+with incentive-salience "wanting," and does this pattern replicate the wanting/liking dissociation
+already documented in the visual-art and music neuroaesthetics literature specifically for a
+dance-based aesthetic stimulus?</p>
+<p class="rqstatus">Open. Requires fMRI access and a validated camatkāra self-report measure
+administered continuously or at fixed intervals during scanning; methodologically standard within
+neuroaesthetics but not yet attempted with karaṇa-specific stimuli.</p>
+</div>
+
+<h2 class="sec">07 · Neuroaesthetics Proper: The Default Mode Network and Aesthetic Absorption</h2>
+<p>Edward Vessel's research on the default mode network's paradoxical involvement in intensely
+moving aesthetic experience — a network more classically associated with self-referential thought,
+mind-wandering, and internally directed cognition, and more classically expected to deactivate
+rather than activate during externally directed perceptual tasks — documents that the most powerful,
+self-reportedly transformative aesthetic experiences (what Vessel's own work terms aesthetic
+experiences that "move" a viewer, distinguished from merely "liking" a stimulus) show a distinctive
+co-activation of default mode network regions alongside the expected sensory and reward-circuit
+engagement, suggesting that peak aesthetic experience involves a genuinely self-relevant, personally
+meaningful processing mode rather than purely external perceptual evaluation. This is <span
+class="tag modern">Modern Scholarship</span>, and it offers this module's most direct neural
+candidate for what distinguishes camatkāra (a relished, transformative aesthetic state, per Part I
+Section 3.2) from mere accurate rasa-recognition (an externally directed perceptual-cognitive
+achievement, the domain Sections 1 through 4 above addressed).</p>
+<p>Applied as <span class="tag synthesis">AI Synthesis</span> to this module's ongoing distinction
+between rasa-recognition (cognitive-perceptual) and camatkāra (reward-and-self-relevance-dependent),
+Vessel's finding predicts a specific dissociation directly complementary to Section 06's
+reward-circuit prediction: rasa-recognition accuracy should correlate primarily with sensory and
+action-observation network engagement (fusiform, superior temporal sulcus, the mirror system
+discussed in Section 03), while camatkāra intensity specifically should correlate with the
+additional, distinctive co-activation of default mode network regions (medial prefrontal cortex,
+posterior cingulate) that Vessel's work associates with self-relevant "being moved," giving this
+module's overall research programme two independently converging, jointly testable neural
+predictions (reward-circuit engagement per Section 06, default-mode co-activation per this section)
+for the same underlying camatkāra construct, rather than a single, less falsifiable prediction.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N07</span>
+<p>In the same fMRI design proposed in RQ N06, does default mode network co-activation (medial
+prefrontal cortex, posterior cingulate, in the pattern Vessel's research documents for being-moved
+aesthetic experience generally) track self-reported camatkāra intensity independently of, and in
+addition to, the reward-circuit signal RQ N06 targets, and does this co-activation pattern
+specifically distinguish spectators reporting sahṛdaya-level completion from spectators accurately
+recognizing the intended rasa without reporting camatkāra?</p>
+<p class="rqstatus">Open. A natural joint analysis alongside RQ N06 within the same scanning
+session, rather than a separate study; the two together would constitute the first direct
+neuroimaging test of the rasa-recognition/camatkāra dissociation this module's Sections 06 and 07
+jointly propose.</p>
+</div>
+
+<h2 class="sec">08 · Psychophysiological Mechanism-Dissociation: A Direct Test of RQ I09</h2>
+<p>Part III's RQ I09 asked whether DBT-style distress tolerance (engaging with one's own genuinely
+personal distress) and sādhāraṇīkaraṇa-mediated aesthetic distance (engaging with a
+de-particularized, performed distress) achieve their convergent phenomenological outcome — engaged
+but not overwhelmed — through one shared regulatory mechanism or two distinct ones, and flagged the
+physiological measurement this required as a genuinely novel, not-yet-designed study. This section
+supplies that design directly, drawing on an established psychophysiological literature on emotion
+regulation strategy comparison, most substantially James Gross's own process-model research
+programme (already surveyed at a general level in Part I's D2.1) extended here to its specific
+measurement methodology: distinct regulation strategies (reappraisal, suppression, distancing,
+acceptance) produce measurably distinct autonomic signatures — reappraisal-based strategies
+typically show reduced sympathetic activation (lower EDA) with preserved or increased
+parasympathetic engagement (higher HRV), while suppression-based strategies typically show
+paradoxically increased sympathetic activation despite reduced outward expression, a well-replicated
+finding from Gross's own laboratory and multiple independent replications.</p>
+<p>This section proposes, as <span class="tag synthesis">AI Synthesis</span> building directly on
+Gross's established strategy-specific autonomic signatures (<span class="tag modern">Modern
+Scholarship</span>), the specific comparative design RQ I09 requires: if sādhāraṇīkaraṇa functions
+mechanistically like cognitive reappraisal or distancing (the literature's own preferred term for
+exactly the psychological-distance operation Part I's Section 3.2 describes), a spectator engaging
+with karaṇa-based performed distress should show the reappraisal-typical autonomic signature
+(reduced EDA, preserved or elevated HRV) even while reporting full engagement with the represented
+emotion's intensity — the specific, falsifiable signature that would distinguish sādhāraṇīkaraṇa
+from suppression (which would show the paradoxical high-EDA, low-expression pattern) and from simple
+avoidance (which would show reduced engagement altogether, inconsistent with camatkāra's requirement
+of full aesthetic absorption).</p>
+
+<h3 class="sub">8.1 Comparing This Signature Directly Against DBT's Own Documented Psychophysiology</h3>
+<p>DBT's distress tolerance module has its own, separately documented psychophysiological research
+base, substantially smaller than the general emotion-regulation-strategy literature Gross's
+programme established but sufficient for direct comparison: distress tolerance skills, unlike
+reappraisal, are typically deployed under conditions of already-elevated sympathetic arousal (a
+genuine personal crisis) and are documented as producing gradual autonomic de-escalation over the
+course of skill deployment rather than the more immediate, anticipatory dampening reappraisal
+typically shows when deployed before or during stimulus onset. If sādhāraṇīkaraṇa's autonomic
+signature more closely resembles the anticipatory, reappraisal-typical pattern (consistent with its
+textually described function of transforming the stimulus's meaning from the outset, per Part I
+Section 3.1's account of aesthetic distance as constitutive of the reception event rather than a
+coping response applied afterward) than the gradual de-escalation pattern DBT's distress tolerance
+research documents, this would supply exactly the mechanism-dissociation evidence RQ I09 sought —
+two convergent phenomenological outcomes achieved through measurably distinct autonomic routes.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N08</span>
+<p>In a directly comparative within-subject psychophysiological study, does sādhāraṇīkaraṇa-mediated
+engagement with karaṇa-based performed distress show the anticipatory, reappraisal-typical autonomic
+signature (reduced EDA and preserved HRV from stimulus onset) documented in Gross's process-model
+literature, while a separate DBT-style distress-tolerance condition (using a genuinely personal,
+self-referential stressor recalled by the same participants) shows the gradual
+de-escalation-from-elevated-baseline signature DBT's own psychophysiological literature documents —
+directly resolving RQ I09's mechanism-dissociation question with a specific, named comparison
+against an established regulation-strategy taxonomy?</p>
+<p class="rqstatus">Open. The most directly executable resolution path for RQ I09 identified
+anywhere in this series; requires careful counterbalancing of stimulus order and stressor
+equivalence, a nontrivial but standard psychophysiology-laboratory design challenge.</p>
+</div>
+
+<h2 class="sec">09 · Motor Neuroscience of Karaṇa Execution: Basal Ganglia, Cerebellum, and Procedural Memory</h2>
+<p>Part I's doctrinal and Part II's historical modules both treat karaṇa acquisition primarily as a
+matter of textual transmission and pedagogical lineage; this section addresses the distinct question
+of what happens, neurally, when a karaṇa sequence moves from effortful, cortically-mediated
+deliberate execution to fluent, automatic performance — a transition the motor-learning literature
+documents with considerable precision. The basal ganglia's role in procedural, habit-based motor
+learning (substantially characterized through Ann Graybiel's research on striatal "chunking," the
+process by which a sequence of individually learned movement elements becomes consolidated into a
+single, more efficiently executed motor unit) and the cerebellum's role in fine-grained temporal and
+error-correction control of movement (substantially characterized through decades of research
+associated with, among others, Reza Shadmehr's motor-adaptation research programme) together
+constitute <span class="tag modern">Modern Scholarship</span> describing the general neural
+architecture of skilled motor sequence learning, independent of any dance-specific application.</p>
+<p>Graybiel's "chunking" concept bears directly, as <span class="tag synthesis">AI Synthesis</span>,
+on Part I's Section 4.1a-4.1b combinatorial karaṇa/aṅgahāra architecture — the finding, already
+noted in Part III's Section 9 discussion of chunking theory at a general cognitive level, that
+karaṇa sequences are themselves compositionally structured (individual karaṇas combining into larger
+aṅgahāra units) maps with unusual directness onto the basal ganglia's own documented chunking
+mechanism: an expert dancer's fluent execution of a multi-karaṇa aṅgahāra sequence plausibly
+reflects genuine striatal consolidation of the constituent karaṇas into a single automatized motor
+chunk, a mechanistically specific, testable claim distinct from the purely descriptive
+combinatorial-structure argument Part I's own text made on textual grounds alone.</p>
+
+<h3 class="sub">9.1 What Basal Ganglia Dysfunction Would Predict, and Why This Matters Diagnostically</h3>
+<p>The basal ganglia's central role in procedural motor learning is documented with particular
+clarity in Parkinson's disease research, where striatal dopaminergic depletion produces specific,
+measurable deficits in sequence learning and chunking (alongside the disease's better-known deficits
+in movement initiation and execution speed) without necessarily impairing declarative,
+cortically-mediated memory for the same sequence's individual components. Applied here as <span
+class="tag synthesis">AI Synthesis</span>, this predicts a specific, clinically testable
+dissociation directly relevant to Section 20's later geriatric discussion: a dancer with early-stage
+basal ganglia dysfunction should show measurably impaired chunking and automatization of new karaṇa
+sequences while retaining the capacity to execute already-consolidated, long-practiced sequences
+relatively normally — a pattern that, if confirmed, would offer a novel behavioural marker for early
+basal ganglia dysfunction in a trained-dancer population, extending rather than merely applying the
+existing Parkinson's motor-learning literature.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N09</span>
+<p>Using a controlled motor-sequence-learning paradigm modelled on Graybiel's chunking methodology
+but using genuine karaṇa sequences as stimuli, does reaction-time and kinematic-smoothness evidence
+for sequence chunking (a specific, well-established behavioural signature in the motor-learning
+literature) emerge over the course of structured karaṇa practice in novice dancers on a timescale
+consistent with documented basal-ganglia consolidation timescales for other motor sequences, and
+does chunking magnitude predict subjective fluency ratings from expert evaluators?</p>
+<p class="rqstatus">Open. A directly executable behavioural-kinematic study requiring motion-capture
+equipment rather than neuroimaging; the most tractable of this section's proposals, with the
+basal-ganglia-dysfunction extension (RQ N09a, unlisted) requiring clinical population access as a
+separate, later-phase study.</p>
+</div>
+
+<h2 class="sec">10 · Facial Action Coding and the Objective Measurement of Anubhāva</h2>
+<p>Paul Ekman's and Wallace Friesen's Facial Action Coding System (FACS), a comprehensive,
+anatomically grounded taxonomy of individually identifiable facial muscle movements (action units)
+developed originally for basic-emotion research but now standard methodology across affective
+science broadly independent of one's theoretical commitment to discrete or constructed emotion
+models, offers this module's most directly available objective instrument for anubhāva specifically
+— the visible, physical consequent of emotion Bharata's own architecture treats as central (Part I,
+Section 2.2) and Part III's Section 1 mapped onto the MSCEIT's "perceiving emotion" branch. This is
+<span class="tag modern">Modern Scholarship</span>, with FACS certification and automated
+FACS-scoring software (now substantially machine-learning-based, following foundational work from
+groups including Jeffrey Cohn's laboratory) both mature, widely used research infrastructure
+requiring no new development.</p>
+<p>Applied to abhinaya specifically, offered as <span class="tag synthesis">AI Synthesis</span>,
+FACS scoring of trained performers' facial anubhāva production during specific rasa sequences would
+supply the same kind of objective, componential, non-self-report measurement this module has
+repeatedly identified as the missing element in Part III's largely self-report-dependent
+psychometric proposals: rather than asking a spectator to self-report which rasa they perceived,
+FACS scoring could establish, independently, which specific action units a performer actually
+produced during a given rasa sequence, testing whether Bharata's own detailed facial-expression
+prescriptions (the text's specific eye, brow, and mouth configurations for each rasa, drawn from the
+Nāṭyaśāstra's own dedicated chapters on facial abhinaya) correspond to a stable, FACS-codeable
+action-unit signature distinguishable across the nine rasas — a direct, objective test of the text's
+own descriptive precision against a modern anatomical coding standard, independent of any
+spectator's subjective interpretation.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N10</span>
+<p>Does FACS scoring of trained performers producing each of the nine rasas according to the
+Nāṭyaśāstra's own prescribed facial abhinaya show a stable, discriminable action-unit signature per
+rasa across multiple performers and multiple performances (testing inter-performer and
+inter-occasion reliability of the text's own prescriptions), and do these action-unit signatures
+overlap with, diverge from, or extend Ekman's own basic-emotion action-unit taxonomy in the specific
+pattern Part I's Section 2.1 Ekman/sthāyibhāva comparison would predict?</p>
+<p class="rqstatus">Open. A directly executable, comparatively low-cost study using existing
+FACS-certified coders or automated FACS software on video recordings of trained performers; requires
+no new instrument development, matching Section 05's favorable instrumentation finding.</p>
+</div>
+
+<h2 class="sec">11 · Alexithymia's Neural Correlates: A Physiological Extension of Part III's Section 6</h2>
+<p>Part III's Section 6 proposed, on clinical-behavioural grounds, that alexithymia should predict
+reduced rasa-completion because of its documented impairment of internal-affective-state access;
+this section supplies the specific neuroimaging literature that gives RQ I06 a physiological
+measurement pathway rather than a self-report-only one. Alexithymia's neural correlates,
+substantially characterized through Olivier Luminet's and Rainer Krach's neuroimaging research
+programmes, most consistently implicate reduced anterior cingulate cortex and anterior insula
+activation during emotional processing tasks — precisely the regions Section 04's
+interoceptive-predictive-processing discussion identified as central to interoceptive signal
+registration — alongside, in several though not all studies, reduced functional connectivity between
+these regions and prefrontal areas involved in emotional labelling and regulation. This is <span
+class="tag modern">Modern Scholarship</span>, though this section notes directly that the
+alexithymia neuroimaging literature, like much clinical-population neuroimaging generally, shows
+meaningful cross-study heterogeneity in exact regional findings, a caveat consistent with this
+series' standing evidentiary discipline.</p>
+<p>This finding converges directly, as <span class="tag synthesis">AI Synthesis</span>, with Section
+04's interoceptive-accuracy proposal: if alexithymia's core deficit is substantially
+interoceptive-insular in its neural substrate, then RQ N04's interoceptive-accuracy behavioural task
+and RQ I06's alexithymia-TAS-20 measure should, on this hypothesis, be measuring substantially
+overlapping underlying neural machinery, predicting that TAS-20 alexithymia scores and
+heartbeat-discrimination interoceptive-accuracy scores should correlate meaningfully with each other
+in any future spectator study, and that both should independently predict reduced camatkāra — a
+specific, testable convergence prediction this module can make that neither Part III's Section 6 nor
+this module's Section 4 could make in isolation.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N11</span>
+<p>In an fMRI replication of RQ I06's proposed alexithymia study, does reduced camatkāra in
+high-TAS-20 individuals correlate specifically with reduced anterior insula and anterior cingulate
+activation during karaṇa-based performance viewing (rather than with reduced activation more broadly
+across the sensory and action-observation networks Section 03 discussed), isolating alexithymia's
+effect to the specific interoceptive-integration circuitry this section and Section 04 jointly
+identify, rather than reflecting a more general perceptual or attentional deficit?</p>
+<p class="rqstatus">Open. A natural neuroimaging extension of RQ I06 (Part III) and RQ N04 above;
+would ideally be run as a combined study measuring TAS-20, heartbeat-discrimination accuracy, and
+fMRI response in the same sample to test all three convergence predictions simultaneously.</p>
+</div>
+
+<h2 class="sec">12 · The Dance-Trained Brain: Expertise Effects on the Mirror and Motor Systems</h2>
+<p>Beatriz Calvo-Merino's and Scott Grafton's programme of neuroimaging research directly comparing
+expert dancers, dancers trained in a different style, and non-dancers observing identical dance
+sequences constitutes this module's single most directly relevant existing empirical literature,
+since it is one of the few neuroimaging bodies of work conducted specifically on trained dance
+expertise rather than adapted from other motor domains. Calvo-Merino's core finding — that expert
+dancers show significantly greater premotor and parietal (mirror-system) activation specifically
+when observing movements from their own trained dance vocabulary, compared to both non-dancers and
+dancers trained in a different style observing the identical movements — is <span class="tag
+modern">Modern Scholarship</span> directly confirming that mirror-system engagement during action
+observation is expertise- and vocabulary-specific rather than generic, a finding of unusual direct
+relevance to this module's Section 3 embodied-simulation discussion and to RQ N03's mu-suppression
+proposal above.</p>
+<p>Applied directly to the karaṇa system, this finding predicts, as <span class="tag synthesis">AI
+Synthesis</span> extending Calvo-Merino's own established paradigm rather than proposing a novel
+mechanism, that trained Bharatanatyam, Kuchipudi, or other classical-dance-trained observers should
+show measurably greater mirror-system engagement when observing karaṇa-based sequences specifically
+than either non-dancers or dancers trained in a stylistically distant tradition (ballet or
+contemporary dance, for instance) — a directly replicable extension of an already-validated paradigm
+rather than a speculative new design, giving this module a comparatively low-risk, high-confidence
+study to prioritize among its more novel proposals.</p>
+
+<h3 class="sub">12.1 Structural, Not Only Functional, Expertise Effects</h3>
+<p>A separate, complementary strand of dance-neuroscience research, substantially associated with
+structural MRI studies of long-term dance training, documents measurable grey-matter volume and
+white-matter tract differences in expert dancers relative to non-dancers in regions including the
+basal ganglia, cerebellum, and sensorimotor cortex — <span class="tag modern">Modern
+Scholarship</span> consistent with, and extending, the general expertise-related neuroplasticity
+literature (well documented in other domains, most famously London taxi drivers' hippocampal
+enlargement in Eleanor Maguire's research). This section's contribution, distinct from the
+functional mirror-system finding above, is to flag structural neuroplasticity as a second,
+independent line of evidence this module's future research programme should track separately:
+functional expertise effects (Calvo-Merino's finding, replicable relatively quickly with trained
+dancers) and structural expertise effects (requiring longitudinal tracking across a training
+trajectory, a considerably longer-horizon study) address genuinely different questions about how
+deeply karaṇa training reshapes the trained brain, discussed further in Section 17 below.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N12</span>
+<p>Directly replicating Calvo-Merino's own paradigm with karaṇa-trained dancers, karaṇa-naive but
+otherwise dance-trained (ballet or contemporary) participants, and non-dancers as three comparison
+groups observing identical karaṇa-based video stimuli, does mirror-system activation show the same
+style-specific expertise gradient Calvo-Merino documented for ballet versus capoeira, confirming
+that karaṇa vocabulary specifically, rather than dance training generally, drives the effect?</p>
+<p class="rqstatus">Open. The lowest-risk neuroimaging proposal in this entire module, being a
+direct, well-precedented paradigm replication rather than a novel design; recommended as an
+early-phase study given its comparatively high probability of a clean, interpretable result.</p>
+</div>
+
+<h2 class="sec">13 · Neural Entrainment and Inter-Brain Synchrony: Hyperscanning as a Direct Test of Coupled-Oscillator Sahṛdaya</h2>
+<p>Part I's D4 and D9 appendices proposed neural and physiological entrainment (coupled-oscillator
+dynamics between performer and spectator) as a candidate substrate for sahṛdaya-completion, a
+proposal this module's Sections 05 and 08 above have already given specific single-subject
+physiological instrumentation. This section addresses the genuinely dyadic, between-persons claim
+directly, via the specific research methodology built for exactly this question: hyperscanning, the
+simultaneous neuroimaging (via EEG or, less commonly given cost, fNIRS or fMRI) of two or more
+interacting individuals, developed substantially through work associated with researchers including
+Uri Hasson (whose "neural coupling" research using naturalistic stimuli, though not originally a
+hyperscanning paradigm in the strict dyadic sense, established the broader finding that a speaker's
+and listener's brain activity show measurable temporal coupling during successful communication)
+and, in the more strictly dyadic hyperscanning tradition, researchers including Guillaume Dumas and
+Giacomo Novembre studying inter-brain synchrony during joint music-making and social interaction
+specifically.</p>
+<p>This is <span class="tag modern">Modern Scholarship</span> directly relevant to, and considerably
+more methodologically specific than, Part I's own entrainment discussion: inter-brain synchrony
+research has already documented, in music-performance-specific hyperscanning studies, measurable
+EEG-band synchrony (particularly in alpha and theta bands) between co-performing musicians
+correlating with successful ensemble coordination, and, in a smaller but directly relevant
+literature, measurable synchrony between performers and audience members during live musical and
+theatrical performance, correlating in at least some studies with audience members' self-reported
+engagement and enjoyment. Applied as <span class="tag synthesis">AI Synthesis</span> to the sahṛdaya
+doctrine specifically, this literature offers the first genuinely dyadic (rather than
+single-subject, however coupled) neural test of Part I's coupled-oscillator hypothesis:
+performer-spectator EEG synchrony during karaṇa-based performance, measured directly via
+simultaneous hyperscanning rather than inferred from separately measured single-subject signals,
+would constitute the most direct available test of whether sahṛdaya-completion involves genuine
+inter-brain coupling or merely parallel, uncoupled individual responses to a shared stimulus.</p>
+
+<h3 class="sub">13.1 The Critical Methodological Distinction Hyperscanning Alone Resolves</h3>
+<p>This section states a methodological point with direct bearing on how RQ N05 (Section 05) and
+this section's proposal should be read together, rather than as redundant: separately measured
+performer and spectator physiological signals, however similar in pattern, cannot by themselves
+distinguish genuine coupling (each signal causally influencing or entraining the other, in real
+time, during the shared performance event) from mere parallel similarity (both signals independently
+reflecting a shared external stimulus without any actual inter-personal coupling). Only
+simultaneous, time-locked hyperscanning, analyzed using cross-correlation or more sophisticated
+coupling-detection methods (such as the phase-locking-value and Granger-causality approaches
+standard in the hyperscanning literature), can in principle distinguish these two possibilities —
+meaning this section's proposal, not Section 05's single-subject protocol alone, is the methodology
+capable of actually testing Part I's specific "coupled-oscillator" claim rather than a weaker
+"similarly-patterned-response" claim that would be consistent with, but would not establish, genuine
+entrainment.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N13</span>
+<p>Using simultaneous EEG hyperscanning of a performer and one or more spectators during live
+karaṇa-based performance, does inter-brain phase-locking or cross-correlation in alpha and theta
+bands increase specifically during high-camatkāra performance segments (identified via the
+spectator's own continuous self-report or via Section 05's autonomic markers) relative to
+low-engagement segments, and does synchrony magnitude predict post-performance camatkāra ratings
+more strongly than either performer's or spectator's single-subject neural or autonomic signal
+alone?</p>
+<p class="rqstatus">Open. Methodologically demanding and requiring specialized hyperscanning
+equipment and expertise not yet common outside a small number of specialized laboratories, but the
+single most direct available test of Part I's own coupled-oscillator entrainment hypothesis; flagged
+as this module's highest-ambition, highest-payoff proposal.</p>
+</div>
+
+<h2 class="sec">14 · Naturalistic and Ecological Neuroimaging: The Live-Performance Validity Problem</h2>
+<p>Every neuroimaging proposal in Sections 03, 06, 07, and 11 above implicitly assumes some version
+of a controlled, laboratory-based viewing paradigm (pre-recorded video stimuli, a stationary
+participant inside an MRI scanner or wearing an EEG cap, tightly controlled trial structure) that
+stands in genuine methodological tension with the live, embodied, co-present performance context
+Part I's own doctrinal argument treats as constitutive of full rasa-completion, not merely
+incidental to it (Part I, Section 3.1's account of sahṛdaya-hood as an actual, completed reception
+event, not a laboratory approximation of one). This tension is not unique to this series; it is a
+well-recognized, actively debated methodological problem within naturalistic neuroimaging broadly,
+substantially associated with researchers including Uri Hasson (already introduced in Section 13)
+and the broader "naturalistic neuroscience" movement arguing that decades of tightly controlled,
+artificial laboratory paradigms may have systematically underestimated or mischaracterized how real
+brains process real, temporally extended, socially embedded stimuli. This is <span class="tag
+modern">Modern Scholarship</span>, and this section treats it as directly, rather than tangentially,
+relevant to every proposal in this module.</p>
+<p>The specific methodological resolution this literature has developed, and this section proposes
+as <span class="tag synthesis">AI Synthesis</span> applying it to this module's own proposed
+studies, is a graduated, multi-tier research design: laboratory-controlled studies (Sections 03, 06,
+07, 10, 11's proposals) establish mechanistic precision and internal validity using pre-recorded
+stimuli and controlled trial structure, while a smaller number of naturalistic, live-performance
+studies using portable, motion-tolerant EEG or fNIRS systems (increasingly standard in
+naturalistic-neuroscience research, avoiding the near-total immobility fMRI requires) establish
+ecological validity by testing whether laboratory-derived findings actually replicate under genuine
+live-performance conditions — with Section 13's hyperscanning proposal being, by necessity, already
+committed to something closer to this naturalistic tier given its inherently dyadic, real-time
+requirement.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N14</span>
+<p>Using portable, motion-tolerant EEG recorded from spectators at an actual live karaṇa-based
+performance (rather than a laboratory video-viewing paradigm), do the mu-suppression (RQ N03),
+reward-related, and default-mode-network-adjacent signals (approximated via portable EEG proxies,
+given fMRI's incompatibility with live-performance settings) identified in laboratory studies
+replicate in magnitude and pattern under genuine live, co-present performance conditions, or does
+the live setting show a measurably different — plausibly stronger, given the coupled-oscillator
+hypothesis Section 13 addresses — engagement signature than the laboratory equivalent?</p>
+<p class="rqstatus">Open. The necessary ecological-validity companion to nearly every
+laboratory-based proposal in this module; best positioned as a later-phase study once laboratory
+findings from Sections 03, 06, 07, and 11 establish a baseline signature worth testing for
+naturalistic replication.</p>
+</div>
+
+<h2 class="sec">15 · A Proposed Instrument Register: What Physiological Measures Exist, and What Remains Missing</h2>
+<p>Consolidating, rather than introducing new material about, the instruments named across Sections
+1 through 14, this section performs for the neuroscience and psychophysiology literature the same
+instrumentation audit Part III's Section 5 performed for the EQ-psychometric literature — with a
+materially different result this section states plainly rather than downplaying: where Part III
+found instrumentation to be this series' central, recurring bottleneck, this module finds the
+opposite. FACS (Section 10), HRV/EDA/EMG psychophysiology (Section 05), heartbeat-discrimination
+interoceptive-accuracy tasks (Section 04), EEG mu-suppression (Section 03), and even hyperscanning
+(Section 13, methodologically demanding but not requiring new instrument invention) are all mature,
+validated, existing measurement technologies. Only fMRI-based reward-circuit and
+default-mode-network imaging (Sections 06, 07) requires resource-intensive but not novel
+infrastructure, and only the naturalistic-live-performance tier (Section 14) requires genuinely
+emerging, still-maturing portable-neuroimaging technology.</p>
+
+<table>
+<tr><th>Existing instrument / method</th><th>Measurement tradition</th><th>Karaṇa-specific readiness</th></tr>
+<tr><td>FACS (Ekman/Friesen)</td><td>Anatomical facial-action coding</td><td>Fully ready — direct application to anubhāva (Sec. 10)</td></tr>
+<tr><td>EDA / HRV / EMG / photoplethysmography</td><td>Peripheral psychophysiology</td><td>Fully ready — direct mapping to sāttvika-bhāva (Sec. 05)</td></tr>
+<tr><td>Heartbeat-discrimination tasks</td><td>Interoceptive accuracy</td><td>Fully ready — candidate sahṛdaya-readiness predictor (Sec. 04)</td></tr>
+<tr><td>EEG mu-suppression</td><td>Sensorimotor / mirror-system proxy</td><td>Ready — low-cost, well-precedented (Sec. 03, 12)</td></tr>
+<tr><td>fMRI reward / DMN imaging</td><td>Haemodynamic neuroimaging</td><td>Resource-intensive but standard (Sec. 06, 07)</td></tr>
+<tr><td>EEG/fNIRS hyperscanning</td><td>Inter-brain synchrony</td><td>Specialized, methodologically demanding (Sec. 13)</td></tr>
+<tr><td>Portable naturalistic EEG</td><td>Ecological/live-performance neuroscience</td><td>Emerging, not yet standard (Sec. 14)</td></tr>
+</table>
+<p class="tblnote">AI Synthesis (readiness column); instrument properties are Modern Scholarship as cited in each section</p>
+
+<h3 class="sub">15.1 Why This Reversal Matters for the Series' Overall Priority-Setting</h3>
+<p>Part III's Section 26 identified the Rasa Reception Inventory's pilot validation (RQ I05) as the
+single highest-priority next step for that module's entire proposed research programme, precisely
+because nearly every other proposal in Part III depended on an instrument that did not yet exist.
+This module's finding inverts that priority calculus for its own domain: because Section 05's
+autonomic-signal mapping, Section 10's FACS protocol, and Section 04's interoceptive-accuracy task
+are all immediately deployable without any instrument-development phase, this module's actual
+highest-priority recommendation is not instrument-building but the most tractable, lowest-risk
+empirical study among its proposals — Section 12's direct Calvo-Merino paradigm replication (RQ
+N12), which requires no new instrument, no novel study design, and no resource-intensive imaging
+infrastructure beyond what a well-precedented existing paradigm already specifies, offered here as
+<span class="tag synthesis">AI Synthesis</span> extending this series' own standing practice of
+naming a single priority recommendation per module (Part I, Sections 10.3 and 15.4; Part III,
+Section 26.1).</p>
+
+<hr class="div">
+<h2 class="sec">Extended Sub-Domain Appendix</h2>
+<p style="color:var(--text-dim);">The fifteen sections above drew on the neuroscience and
+psychophysiology literatures most directly organized around emotion circuitry, reward,
+interoception, and mirror-system engagement. Ten further sub-fields — each with its own distinct
+methods and evidentiary standards — bear on this module's claims from angles the first fifteen
+sections did not reach: performance-anxiety physiology, long-term neuroplasticity, proprioception
+science, sleep and motor consolidation, geriatric motor neuroscience, psychedelic science,
+cross-cultural neuroimaging, computational neuroscience, chronobiology, and a closing synthesis.
+This appendix treats each with the same evidentiary discipline as the rest of this module.</p>
+
+<h2 class="sec">16 · Performance Anxiety and the Sympathetic Cascade: Stage Fright as an Inverted Doṣa State</h2>
+<p>The psychophysiology of performance anxiety — substantially characterized through decades of
+research on musicians' and performers' stage fright, most notably associated with
+clinical-psychiatric work on performance-specific social anxiety and its distinct treatment
+literature (including the well-documented, if clinically controversial, use of beta-blockers by
+professional musicians to blunt peripheral sympathetic symptoms without altering central cognitive
+appraisal) — documents a well-replicated physiological cascade: anticipatory sympathetic activation
+(elevated heart rate, elevated EDA, catecholamine release) that, past a certain threshold, degrades
+rather than enhances fine motor control and cognitive performance, a relationship classically
+described by the Yerkes-Dodson inverted-U arousal-performance curve, itself <span class="tag
+modern">Modern Scholarship</span> though one this section notes has itself been subject to
+methodological critique regarding its original evidentiary basis.</p>
+<p>This maps, as <span class="tag synthesis">AI Synthesis</span>, onto Part I's doṣa taxonomy
+(Section 6.3) with a specific inversion worth naming directly: where Part III's Section 8 mapped the
+doṣa system's calibration logic onto DBT's emotion-regulation skills as a spectator- and
+clinical-population-facing comparison, this section proposes the doṣa framework's ativyāpti
+(over-representation) category as a direct performer-facing description of exactly the
+excess-arousal degradation the Yerkes-Dodson curve documents — a performer whose sympathetic
+activation has crossed the curve's descending limb would, on this account, produce measurably
+ativyāpti-type overacted or destabilized anubhāva, offering a physiological, rather than purely
+observational, account of one specific doṣa category's occurrence.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N15</span>
+<p>Do trained performers showing elevated pre-performance EDA and heart rate (measured via the same
+protocol as Section 05) subsequently show measurably increased doṣa-category faults (rated by expert
+observers blind to the physiological data) during performance, following the Yerkes-Dodson
+inverted-U pattern, and does this relationship differ systematically between novice and highly
+experienced performers, testing whether expertise shifts the curve's peak rather than merely
+flattening it?</p>
+<p class="rqstatus">Open. A directly executable field study requiring only standard psychophysiology
+equipment deployed backstage before live performances, with no laboratory-simulation compromise
+required.</p>
+</div>
+
+<h2 class="sec">17 · Neuroplasticity and Long-Term Training: Structural Brain Change Across a Karaṇa Training Trajectory</h2>
+<p>Section 12.1 above flagged structural neuroplasticity as a distinct, longer-horizon research
+question from Calvo-Merino's functional expertise findings; this section takes up that question
+directly. The broader expertise-neuroplasticity literature — extending well beyond dance to include
+Eleanor Maguire's hippocampal findings in London taxi drivers, string musicians' documented
+somatosensory cortex reorganization (associated substantially with research from Thomas Elbert's
+laboratory), and dedicated dance-neuroplasticity studies documenting measurable grey-matter and
+white-matter changes specifically in basal ganglia, cerebellar, and sensorimotor regions among
+long-term trained dancers — constitutes <span class="tag modern">Modern Scholarship</span>
+establishing that sustained, skilled motor and sensory training produces measurable, use-dependent
+structural brain change, a well-replicated finding across multiple expertise domains independent of
+any dance-specific claim.</p>
+<p>Applied to karaṇa training specifically, offered as <span class="tag synthesis">AI
+Synthesis</span>, this literature predicts that a longitudinal structural-MRI study tracking novice
+dancers across a multi-year karaṇa training programme should show progressive, measurable structural
+change in the same regions Section 09's basal-ganglia chunking discussion identified as functionally
+central to karaṇa acquisition — a direct structural complement to Section 09's functional and
+behavioural chunking proposal (RQ N09), testing whether the functional automatization that study
+measures is accompanied by, and plausibly enabled by, the structural reorganization this broader
+expertise literature documents in other trained-motor-skill populations.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N16</span>
+<p>In a longitudinal structural-MRI study tracking novice dancers across two to three years of
+structured karaṇa training, do basal ganglia and cerebellar grey-matter volume changes track
+individual differences in behavioural chunking progress (per RQ N09's kinematic measure) more
+closely than they track simple cumulative practice hours, testing whether structural change reflects
+genuine skill consolidation rather than nonspecific training-related change?</p>
+<p class="rqstatus">Open. A resource- and time-intensive longitudinal design; the most demanding
+proposal in this appendix section by virtue of its multi-year timescale rather than any unusual
+methodological novelty.</p>
+</div>
+
+<h2 class="sec">18 · Proprioception, Kinesthetic Memory, and the Aṅga/Upāṅga Distinction</h2>
+<p>Proprioceptive science — the study of the body's own internal sense of limb position, movement,
+and force, mediated substantially through muscle spindle and Golgi tendon organ afferents processed
+in dorsal column-medial lemniscus pathways and integrated at the level of posterior parietal cortex
+and cerebellum — constitutes a distinct sensory-neuroscience literature from the
+interoceptive-signalling literature Section 04 addressed (proprioception concerning limb and body
+position specifically, interoception concerning internal visceral state), a distinction this section
+states directly since the two are frequently and imprecisely conflated in popular writing on
+embodiment. This is <span class="tag modern">Modern Scholarship</span>, and it bears directly on
+Part I's aṅga (major limb) and upāṅga (minor limb, particularly facial and ocular) distinction
+(Section 4 of the doctrinal module): the aṅga/upāṅga distinction maps with reasonable precision onto
+a genuine neuroanatomical distinction between large-muscle proprioceptive representation
+(substantially subserved by classical proprioceptive pathways) and the finer, more densely
+cortically represented control of facial musculature (subserved by distinct corticobulbar pathways
+with disproportionately large cortical representation relative to muscle mass, the same
+disproportion the classical motor homunculus famously illustrates).</p>
+<p>This section proposes, as <span class="tag synthesis">AI Synthesis</span>, that the aṅga/upāṅga
+distinction's practical pedagogical consequence — the Nāṭyaśāstra's own extensive, separately
+organized treatment of facial/ocular abhinaya as a distinct, more granular technical domain from
+limb-based karaṇa execution — plausibly reflects an implicit, practically-derived recognition of
+exactly this neuroanatomical disproportion: facial expression requires, and the text's own
+pedagogical structure implicitly allocates, disproportionately more granular instructional attention
+relative to its comparatively small muscle mass, mirroring the disproportionate cortical
+representation the modern homunculus literature documents, though this section states this as a
+structural resonance worth noting rather than a claim that Bharata's text was itself informed by any
+proprioceptive-neuroscience-equivalent understanding.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N17</span>
+<p>Using standard proprioceptive-acuity tasks (joint-position-matching paradigms) alongside
+FACS-based facial-action-unit precision measures, do trained dancers show disproportionately greater
+expertise-related improvement in facial/ocular precision relative to large-limb proprioceptive
+acuity compared to non-dancers, consistent with the aṅga/upāṅga pedagogical disproportion this
+section proposes reflects a genuine differential-trainability profile rather than mere differential
+practice time allocation?</p>
+<p class="rqstatus">Open. A comparatively modest behavioural study combining two
+already-standardized measurement paradigms; would require careful control for the fact that facial
+abhinaya training time itself may simply exceed limb-training time in typical pedagogical practice,
+a confound this section flags directly.</p>
+</div>
+
+<h2 class="sec">19 · Sleep, Memory Consolidation, and Karaṇa Acquisition</h2>
+<p>The sleep-dependent motor memory consolidation literature — substantially developed through
+research associated with Robert Stickgold and Matthew Walker, documenting that newly acquired motor
+sequences show measurable, sleep-dependent performance gains (particularly associated with slow-wave
+and, in some paradigms, REM sleep stages) even without additional practice between initial learning
+and post-sleep retest, a finding replicated across multiple motor-sequence-learning paradigms though
+with some genuine debate in the field regarding effect-size consistency and the precise sleep-stage
+mechanism involved — constitutes <span class="tag modern">Modern Scholarship</span> directly
+relevant to, but not previously addressed anywhere in this series, the traditional guru-śiṣya
+pedagogical structure Part II's historical module already documented (sustained, daily,
+long-duration apprenticeship training).</p>
+<p>This section proposes, as <span class="tag synthesis">AI Synthesis</span>, that traditional
+karaṇa pedagogy's characteristic daily-practice structure (short, intensively repeated practice
+sessions distributed across consecutive days, rather than single massed-practice sessions, per the
+traditional riyāz/abhyāsa structure this platform's broader research has documented in adjacent
+contexts) is well-aligned with, and plausibly reflects an empirically-derived practical wisdom
+convergent with, the sleep-dependent consolidation literature's own finding that distributed
+practice with intervening sleep produces superior long-term retention compared to equivalent massed
+practice without intervening sleep — a specific, testable convergence between traditional
+pedagogical structure and modern motor-learning science, distinct from and complementary to Section
+09's basal-ganglia chunking discussion.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N18</span>
+<p>Does a karaṇa-sequence-learning study comparing a distributed-practice-with-sleep condition
+against a matched massed-practice-without-intervening-sleep condition (equating total practice time)
+show the sleep-dependent consolidation advantage documented in the general motor-sequence-learning
+literature, and does the magnitude of this advantage correlate with polysomnographically measured
+slow-wave sleep duration specifically, as the existing consolidation literature would predict?</p>
+<p class="rqstatus">Open. A directly executable, well-precedented paradigm adaptation requiring
+sleep-laboratory access; comparatively lower-risk than several other proposals in this appendix
+given the strength of the underlying general motor-consolidation literature.</p>
+</div>
+
+<h2 class="sec">20 · Neurodegeneration, Aging, and Movement-Based Cognitive Reserve</h2>
+<p>Part I's D10.5 appendix already discussed cognitive-motor dual-task benefit in dementia
+populations at a general level; this section extends that discussion with the specific
+basal-ganglia-dysfunction angle Section 9.1 above flagged and left for later treatment. The
+cognitive-reserve literature — substantially associated with Yaakov Stern's research programme,
+documenting that sustained cognitively and physically engaging activity across the lifespan is
+associated with measurably later clinical onset of dementia symptoms relative to underlying
+neuropathological burden, even when the neuropathology itself is not reduced, implying a genuine
+reserve or compensatory-capacity effect rather than disease prevention per se — is <span class="tag
+modern">Modern Scholarship</span> directly relevant to, though distinct in mechanism from, the
+basal-ganglia-chunking discussion in Section 9.1: cognitive reserve concerns broad, distributed
+compensatory capacity, while Section 9.1's proposal concerned a specific, dissociable
+chunking-versus-execution deficit pattern in early basal ganglia dysfunction.</p>
+<p>This section proposes, as <span class="tag synthesis">AI Synthesis</span>, that long-term karaṇa
+training — combining sustained motor-sequence learning (Section 9), sustained social and pedagogical
+engagement (per Part II's guru-śiṣya structure), and sustained aesthetic-emotional engagement (per
+Part III's entire EQ framework) — would, on the cognitive-reserve literature's own general logic, be
+predicted to contribute to cognitive reserve through multiple independent pathways simultaneously, a
+multi-pathway reserve-contribution hypothesis distinct from, and more specific than, the general
+"dance is good for aging brains" claim already common in popular science writing on this topic.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N19</span>
+<p>In a longitudinal cohort of lifelong karaṇa-trained dancers matched against a comparison cohort
+with equivalent general physical-activity levels but no sustained dance-specific training, does
+clinical dementia onset (adjusted for neuropathological burden via biomarker or, where available,
+post-mortem measures) occur measurably later in the karaṇa-trained group, and does any observed
+reserve effect exceed what general physical-activity-based cognitive-reserve research alone would
+predict, testing this section's multi-pathway hypothesis against a single-pathway (general activity)
+null?</p>
+<p class="rqstatus">Open. A demanding, decades-long longitudinal design; realistically executable
+only through partnership with an existing aging-cohort study willing to add karaṇa-training-history
+measures, rather than as a standalone new cohort.</p>
+</div>
+
+<h2 class="sec">21 · Psychedelic Science and the Entropic Brain Hypothesis: A Cautious Analogy to Camatkāra</h2>
+<p>Robin Carhart-Harris's "entropic brain" hypothesis, developed from neuroimaging studies of
+psilocybin and other classic psychedelics, proposes that these substances produce their
+characteristic subjective effects substantially through increased neural entropy (reduced
+default-mode-network-dominated, habitual, over-constrained processing, and increased communication
+across normally more segregated brain networks) — a specific, actively researched <span class="tag
+modern">Modern Scholarship</span> framework this section introduces with explicit caution given its
+subject matter's regulatory and clinical sensitivity, and this section states directly that it draws
+on this literature purely as a comparative neuroscience framework, not as any suggestion regarding
+substance use in relation to karaṇa practice, which this platform does not address or endorse in any
+form.</p>
+<p>The comparison this section draws, offered as <span class="tag synthesis">AI Synthesis</span>,
+concerns Carhart-Harris's specific finding of reduced default-mode-network integrity under
+psychedelics alongside increased global brain-network integration — a pattern intriguingly, though
+only partially, resonant with Section 07's finding that peak aesthetic experience (Vessel's "being
+moved") involves distinctive default-mode-network co-activation rather than the reduction
+psychedelic research documents, a difference this section flags directly rather than papering over:
+camatkāra, on the existing neuroaesthetics evidence, appears to involve heightened self-relevant
+default-mode engagement, while psychedelic-induced ego-dissolution involves the network's reduced
+dominance — suggesting these two altered states of consciousness, however superficially both
+describable as "transcendent" or "absorbing" in ordinary language, may reflect substantially
+different, even opposite, underlying network dynamics, a genuinely open comparative question this
+section does not resolve.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N20</span>
+<p>Using resting-state and task-based fMRI network-integration measures (the same entropy and
+integration metrics Carhart-Harris's programme has developed) alongside the default-mode-network
+co-activation measures RQ N07 proposes, does peak camatkāra show a network signature more consistent
+with heightened default-mode engagement (per Vessel's neuroaesthetics findings) or with
+entropic-brain-style network dis-integration (per psychedelic research), and would this distinction
+hold consistently across mild versus intense self-reported camatkāra, testing whether these
+represent one continuum or two distinct altered-state categories?</p>
+<p class="rqstatus">Open. A conceptually clarifying rather than practically urgent study; positioned
+here as a lower-priority theoretical-clarification proposal rather than a near-term empirical
+priority for this module.</p>
+</div>
+
+<h2 class="sec">22 · Cross-Cultural Neuroimaging and the Universality Question Revisited</h2>
+<p>Part III's Section 16 addressed cross-cultural rasa recognition at the behavioural level; this
+section addresses the same question with the neuroimaging-specific literature Part III's own framing
+deferred. Cross-cultural neuroimaging of emotion processing — a smaller and methodologically more
+difficult literature than single-culture emotion neuroscience, given the practical challenges of
+running equivalent neuroimaging protocols across genuinely distinct cultural populations, but
+represented by a growing body of work comparing basic-emotion-recognition neural signatures (largely
+converging on shared core circuitry, consistent with Ekman-tradition universality claims) against
+culturally-specific expressive-display-rule processing (showing more culture-specific neural
+modulation, particularly in regions associated with social-contextual appraisal) — constitutes <span
+class="tag modern">Modern Scholarship</span> directly relevant to, and considerably more
+mechanistically specific than, Part III's Section 16 behavioural-only framing.</p>
+<p>This section proposes, as <span class="tag synthesis">AI Synthesis</span> extending Part III's RQ
+I16 with a neuroimaging-specific version, that the same rasa-by-rasa cross-cultural transfer
+gradient RQ I16 predicted at the behavioural level (better transfer for rasas closer to Ekman's
+basic-emotion set) should be neurally traceable: culturally naive viewers should show more
+core-circuitry-dominant (amygdala, basic visual and action-observation regions) processing for
+bhayānaka and raudra-type stimuli, and more culturally-modulated,
+context-dependent-appraisal-region-dominant processing for śṛṅgāra-type stimuli lacking a clean
+basic-emotion analogue, giving RQ I16's behavioural prediction a specific, falsifiable neural
+mechanism rather than leaving it as a purely accuracy-based behavioural finding.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N21</span>
+<p>In an fMRI study comparing culturally naive and culturally trained (Indian classical
+dance-literate) viewers processing karaṇa-based rasa content, does the naive group show
+proportionally greater reliance on core, phylogenetically conserved circuitry (amygdala, basic
+visual/action-observation regions) for rasas closer to Ekman's basic-emotion set, and proportionally
+greater reliance on more associative, context-dependent cortical regions for rasas without a clean
+basic-emotion analogue, compared to the culturally trained group — directly testing whether
+cross-cultural transfer gradients reflect differential engagement of universal versus
+culturally-scaffolded neural systems?</p>
+<p class="rqstatus">Open. Requires cross-cultural recruitment and scanning-site coordination, a
+genuine logistical challenge distinct from most other proposals in this module, though the
+behavioural precursor (RQ I16) could and should be run first as a lower-cost filter before
+committing to this section's neuroimaging extension.</p>
+</div>
+
+<h2 class="sec">23 · Computational Neuroscience: Predictive Coding as a Formal Model of Sādhāraṇīkaraṇa</h2>
+<p>Predictive coding and the free-energy principle — substantially associated with Karl Friston's
+computational-neuroscience programme, proposing that the brain functions fundamentally as a
+hierarchical prediction-error-minimization system, continuously generating top-down predictions
+about incoming sensory (and, per Seth's extension already discussed in Section 04, interoceptive)
+signals and updating its internal generative model based on the resulting prediction error —
+constitutes <span class="tag modern">Modern Scholarship</span> offering this module's most formally
+rigorous, mathematically specified theoretical framework, distinct in kind from the more
+anatomically or behaviourally descriptive literatures Sections 1 through 22 have drawn on.</p>
+<p>Applied to sādhāraṇīkaraṇa specifically, extending rather than repeating Section 04's narrower
+interoceptive-prediction-error application, this section proposes, as <span class="tag synthesis">AI
+Synthesis</span>, a formal computational reading: sādhāraṇīkaraṇa's generalization operation
+(de-particularizing a represented emotion away from the spectator's own immediate, self-referential
+concern, per Part I Section 3.1) can be modelled as a specific manipulation of the
+precision-weighting Friston's framework assigns to different levels of the predictive hierarchy —
+aesthetic distance, on this reading, would correspond to a spectator's generative model assigning
+reduced precision (confidence) to self-referential, action-relevant predictions (the predictions
+that would normally drive personal threat-response or self-protective action) while maintaining or
+increasing precision on the more abstract, generalized emotional content itself, a formally
+specifiable mechanism for exactly the psychological-distance operation Section 08's DBT comparison
+addressed empirically rather than computationally.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N22</span>
+<p>Could a computational model implementing Friston's precision-weighting formalism, parameterized
+to represent varying degrees of aesthetic distance, generate simulated behavioural and
+autonomic-response predictions matching the empirical pattern RQ N08's proposed
+sādhāraṇīkaraṇa/DBT-distress-tolerance comparison would produce, and would fitting this model to
+actual empirical data from RQ N08 yield parameter estimates that meaningfully distinguish
+aesthetic-distance engagement from both suppression and simple avoidance at the level of formal
+computational mechanism rather than only at the level of autonomic signature?</p>
+<p class="rqstatus">Open. A theoretical and computational-modelling proposal rather than a
+data-collection study in its own right; depends on RQ N08's empirical data existing first,
+positioning this as a downstream formal-modelling contribution rather than a standalone empirical
+priority.</p>
+</div>
+
+<h2 class="sec">24 · Chronobiology and the Circadian Structuring of Traditional Practice Schedules</h2>
+<p>Chronobiology's well-established findings regarding circadian variation in motor performance,
+cognitive function, and hormonal state across the day — a mature <span class="tag modern">Modern
+Scholarship</span> literature documenting, among other findings, that fine motor coordination and
+reaction time typically show measurable time-of-day variation tracking core body temperature
+rhythms, and that cortisol's own pronounced circadian rhythm (the well-documented cortisol awakening
+response, peaking shortly after waking and declining across the day) modulates both stress
+reactivity and, in some studies, memory consolidation processes — bears on the traditional
+brāhma-muhūrta practice-timing convention (pre-dawn practice, well-documented across multiple Indian
+classical performing-arts pedagogical traditions and referenced in this platform's own broader
+Vedic-science research) in a manner this series has not previously addressed.</p>
+<p>This section proposes, as <span class="tag synthesis">AI Synthesis</span>, a testable,
+non-mystical chronobiological account of the brāhma-muhūrta practice-timing convention's plausible
+functional rationale, distinct from and not dependent on any of the tradition's own cosmological
+justifications for the practice: pre-dawn practice timing plausibly interacts favourably with the
+rising phase of the cortisol awakening response (associated in the general chronobiology literature
+with heightened alertness and, in some studies, enhanced memory encoding) and with reduced competing
+sensory and social stimulation, offering a specific, falsifiable functional hypothesis for why this
+widely, independently adopted traditional timing convention might confer genuine motor-learning
+advantages distinct from mere cultural convention or religious observance alone.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N23</span>
+<p>Does karaṇa-sequence acquisition (measured via the chunking and kinematic-smoothness metrics RQ
+N09 proposes) show measurably faster consolidation when practice sessions are scheduled during the
+traditional pre-dawn window compared to a matched practice duration scheduled at a different time of
+day, and does any observed advantage correlate with individually measured
+cortisol-awakening-response magnitude, testing the specific chronobiological mechanism this section
+proposes rather than a generic "morning practice is good" claim?</p>
+<p class="rqstatus">Open. A comparatively modest, directly executable behavioural chronobiology
+study; would require careful control for confounds including reduced environmental distraction and
+participant motivation specific to traditionally-framed pre-dawn practice, which this section flags
+as a nontrivial design challenge.</p>
+</div>
+
+<h2 class="sec">25 · Synthesis: What Neuroscience Converges On, What Remains Genuinely Open, and Why This Module's Instrument Position Differs From Part III's</h2>
+<p>Read across all twenty-four preceding sections, a pattern emerges distinct from both patterns
+Part I and Part III identified in their own closing syntheses. Part I's nine-domain appendix found
+mechanism-and-process domains converging more strongly than cosmological-scale domains; Part III
+found instrumentation, not mechanism, as the recurring bottleneck across the psychological-EQ
+literature. This module's own pattern is instrumentation-favorable but mechanism-cautious: Sections
+1 through 5 established that the core physiological and psychophysiological instruments this
+module's empirical programme depends on (FACS, HRV/EDA/EMG, interoceptive-accuracy tasks, EEG
+mu-suppression) already exist, mature and validated, requiring no new development — a materially
+more favourable starting position than Part III's own instrumentation survey found. But Sections 1,
+2, and 3 in particular found the underlying mechanistic claims themselves considerably more
+contested (LeDoux's own move away from strong discrete-circuit claims, Barrett's constructionist
+challenge to discrete emotion generally, Hickok's critique of strong mirror-neuron interpretation)
+than a superficial reading of "neuroscience confirms rasa theory" would suggest, meaning this
+module's genuine contribution is a set of falsifiable, immediately executable studies rather than a
+set of confirmed findings — consistent with, and extending, this series' standing discipline (Part
+I, Section 8.3; Part III, Section 26) of precision over confirmation.</p>
+<p>Sections 6 through 14 (reward circuitry, default-mode-network aesthetics, mechanism-dissociation
+psychophysiology, motor neuroscience, FACS, alexithymia, dance-expertise neuroimaging,
+hyperscanning, naturalistic-validity methodology) constitute this module's most directly actionable
+stretch, each supplying Part III's four handed-forward questions (RQ I06, I09, I10, I11) with a
+specific, named physiological measurement pathway those questions previously lacked. Sections 16
+through 24's extended appendix reaches into performer-facing (stage fright, proprioception,
+chronobiology), longitudinal (neuroplasticity, aging), and more speculative or theoretical
+(psychedelic-science analogy, computational modelling) territory, each stating clearly, per this
+series' standing practice, where the comparison is well-evidenced, where it is a reasonable but
+untested hypothesis, and where — as with Section 21's psychedelic comparison — the existing evidence
+may point toward genuine divergence rather than convergence between the classical and modern
+frameworks.</p>
+
+<h3 class="sub">25.1 A Single Priority Recommendation</h3>
+<p>Following this series' own standing practice of naming one priority recommendation per module
+(Part I, Sections 10.3 and 15.4; Part III, Section 26.1), this module identifies RQ N12 — the direct
+Calvo-Merino paradigm replication testing karaṇa-specific mirror-system expertise effects — as the
+single highest-priority next empirical step, for reasons distinct from Part III's own priority
+logic: not because every other proposal depends on it (unlike Part III's RQ I05), but because it is
+simultaneously the lowest-risk, most directly precedented, and most immediately fundable study in
+this entire module, requiring no new instrument, no novel design, and no resource-intensive
+infrastructure beyond a well-established existing paradigm — making it the natural first empirical
+result this platform's neuroscience research programme could produce, with RQ N05's sāttvika-bhāva
+psychophysiology protocol as a closely competitive second priority given its similarly low
+instrumentation barrier.</p>
+
+<div class="roadmap">
+<h4>Series Roadmap, Continued — Part V · Educational / Pedagogical Loss</h4>
+<p>Will take up this module's Section 20 cognitive-reserve discussion and Section 17 neuroplasticity
+findings directly alongside Part II's Section 12 general-education argument and Part III's Section
+15 medical-education finding, asking what is measurably lost — cognitively, developmentally, and not
+merely culturally — when karaṇa-based training is absent from a general population's educational
+trajectory, and what Part I's D3.3 school-based SEL literature and this module's Section 19
+sleep-consolidation findings jointly imply for how any future karaṇa curriculum pilot should be
+structured and scheduled.</p>
+</div>
+
+<h2 class="sec">26 · Motor-Skill Heritability: Behavioral Genetics Applied to Karaṇa Aptitude Specifically</h2>
+<p>Part III's Section 18 addressed twin-study heritability of general emotion-recognition ability; this
+section addresses a genuinely distinct behavioral-genetics literature this series has not previously
+engaged — heritability of fine motor sequence-learning ability and general motor coordination, a
+literature smaller and methodologically younger than the personality- and cognition-heritability
+literatures, but represented by twin studies of gross and fine motor coordination (documenting moderate
+heritability estimates broadly comparable in magnitude to the emotion-recognition heritability Part III's
+Section 18 reported) and by a growing, still-developing molecular literature attempting to identify
+specific genetic variants associated with elite athletic and motor performance, most prominently variants
+in the ACTN3 gene associated with fast-twitch muscle fiber composition and power-based athletic
+performance. This is <span class="tag modern">Modern Scholarship</span>, though this section states
+directly that the molecular motor-genetics literature specifically remains considerably less mature and
+more prone to non-replication than the broader twin-study heritability literature, a distinction this
+section maintains carefully rather than treating both bodies of evidence as equally solid.</p>
+<p>Applied to karaṇa aptitude specifically, offered as <span class="tag synthesis">AI Synthesis</span>,
+this section proposes that Part III's RQ I18 twin-study design (measuring heritability of baseline
+sahṛdaya-reception, the receptive side of the karaṇa-rasa system) should be extended with a parallel,
+production-side twin study measuring heritability of karaṇa-specific motor-sequence-acquisition rate — a
+genuinely distinct question from reception heritability, since a person could in principle inherit strong
+receptive sensitivity without strong motor-learning aptitude, or the reverse, and this series has not yet
+proposed any study distinguishing these two independently heritable components of overall karaṇa
+competence.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N24</span>
+<p>Using a monozygotic/dizygotic twin-pair design administering a standardized novel motor-sequence-learning
+task (not karaṇa-specific, to avoid confounding heritability with unequal prior exposure) alongside RQ
+N09's karaṇa-specific chunking measure in twins with equal karaṇa training exposure, does motor-sequence-
+learning heritability predict karaṇa-specific chunking rate independently of general motor heritability,
+and does this production-side heritability estimate correlate with, or diverge from, RQ I18's proposed
+reception-side heritability estimate within the same twin sample?</p>
+<p class="rqstatus">Open. Requires access to an existing twin registry with willingness to add both a novel
+motor-learning task and karaṇa-specific training-history measures; realistically a joint extension of RQ
+I18 rather than a fully independent study.</p>
+</div>
+
+<h2 class="sec">27 · Motion Capture, Virtual Reality, and the Neuroscience of Digitally-Mediated Skill Transfer</h2>
+<p>Motion-capture-based movement analysis and virtual-reality-delivered motor training constitute a
+distinct, rapidly maturing methodological literature within motor neuroscience and rehabilitation
+science — substantially developed through sports-science and physical-rehabilitation research
+demonstrating that VR-delivered motor training can, for several skill classes, produce measurable skill
+transfer to real-world execution, though with well-documented, non-trivial transfer-efficiency losses
+relative to real-world practice, a pattern directly relevant to, and distinct from, Section 14's naturalistic
+live-performance validity discussion. This is <span class="tag modern">Modern Scholarship</span>, and it
+bears directly on this platform's own stated practice of standalone HTML deployment and Chandu's broader
+digital-pedagogy infrastructure, since it offers a specific, testable evidentiary basis for whether any
+future digitally-delivered karaṇa instruction module could approach in-person training efficacy.</p>
+<p>This section proposes, as <span class="tag synthesis">AI Synthesis</span> extending Part III's Section 23
+telehealth discussion from the psychological/EQ domain into the motor-learning domain specifically, that
+motion-capture-based feedback (rather than pure video-based instruction) represents a qualitatively
+different, and plausibly more effective, category of digital karaṇa pedagogy than video alone, since
+motion-capture systems can supply real-time, quantitative kinematic feedback (joint angles, timing,
+trajectory smoothness) directly comparable to RQ N09's own proposed chunking-progress metric — meaning a
+motion-capture-based digital karaṇa training tool would not merely be a lower-fidelity substitute for
+in-person instruction but could, in principle, supply a specific category of quantitative feedback
+traditional in-person instruction does not typically provide in real time at all.</p>
+
+<div class="rqbox">
+<span class="rqid">RQ N25</span>
+<p>Does a motion-capture-based digital karaṇa training protocol, providing real-time kinematic feedback
+against an expert reference trajectory, produce faster chunking progress (per RQ N09's metric) than
+standard video-based instruction at equivalent practice duration, and does this advantage hold, diminish,
+or reverse when compared against traditional in-person guru-śiṣya instruction, directly testing whether
+quantitative real-time feedback can partially compensate for the reduced embodied, relational transmission
+Part III's Section 23 flagged as a specific vulnerability of digitally-mediated karaṇa instruction?</p>
+<p class="rqstatus">Open. A directly executable comparative pedagogy study given motion-capture technology's
+increasing affordability and this platform's own existing digital-deployment infrastructure; flagged as
+directly relevant to Part V's forthcoming pedagogical-access argument.</p>
+</div>
+
+<hr class="div">
+<h2 class="sec">Working Bibliography — Part IV</h2>
+<ol class="bib">
+<li><b>Joseph LeDoux</b>, the amygdala fear-circuit programme and its later three-level (circuit/response/feeling) reformulation, informing Section 1.</li>
+<li><b>Jaak Panksepp</b>, the seven primary-process affective-neuroscience systems, informing Section 1.</li>
+<li><b>Lisa Feldman Barrett</b>, the theory of constructed emotion and core-affect framework, informing Section 2.</li>
+<li><b>Giacomo Rizzolatti and Vittorio Gallese</b>, mirror-neuron research and embodied-simulation
+theory, informing Section 3, read alongside <b>Gregory Hickok's</b> critique of strong human
+mirror-system claims.</li>
+<li><b>Anil Seth, Hugo Critchley, and Bud Craig</b>, interoceptive predictive processing and insular
+anatomy, informing Section 4, alongside <b>Sarah Garfinkel's</b> interoceptive-accuracy measurement
+framework.</li>
+<li><b>Stephen Porges's</b> polyvagal theory, cited with explicit methodological caution regarding
+its more contested neuroanatomical claims, informing Section 5, alongside the general HRV/EDA
+psychophysiology literature.</li>
+<li><b>Wolfram Schultz, Anjan Chatterjee, Oshin Vartanian, Edward Vessel, and Diego Pizzagalli</b>,
+reward-prediction-error, neuroaesthetics, and anhedonia-specific reward-circuit research, informing
+Sections 6 and 7.</li>
+<li><b>Kent Berridge</b>, the wanting/liking dissociation in reward neuroscience, informing Section 6.1.</li>
+<li><b>James Gross</b>, the process model of emotion regulation and its strategy-specific psychophysiological signatures, informing Section 8, extending Part I's D2.1 general treatment.</li>
+<li><b>Ann Graybiel and Reza Shadmehr</b>, basal-ganglia procedural chunking and cerebellar motor-adaptation research, informing Section 9.</li>
+<li><b>Paul Ekman and Wallace Friesen</b>, the Facial Action Coding System, informing Section 10, read alongside <b>Jeffrey Cohn's</b> automated FACS-scoring research.</li>
+<li><b>Olivier Luminet and colleagues</b>, alexithymia neuroimaging research, informing Section 11.</li>
+<li><b>Beatriz Calvo-Merino and Scott Grafton</b>, dance-expertise mirror-system neuroimaging, informing Section 12, alongside the general dance-neuroplasticity structural-MRI literature.</li>
+<li><b>Uri Hasson, Guillaume Dumas, and Giacomo Novembre</b>, neural coupling and hyperscanning research, informing Section 13.</li>
+<li><b>The naturalistic-neuroscience methodological literature</b>, informing Section 14's ecological-validity discussion.</li>
+<li><b>Yaakov Stern</b>, the cognitive-reserve research programme, informing Section 20.</li>
+<li><b>Robin Carhart-Harris</b>, the entropic-brain hypothesis and psychedelic neuroimaging, informing Section 21, introduced with explicit editorial caution regarding its subject matter.</li>
+<li><b>Karl Friston</b>, predictive coding and the free-energy principle, informing Section 23.</li>
+<li><b>Robert Stickgold and Matthew Walker</b>, sleep-dependent motor memory consolidation research, informing Section 19.</li>
+<li><b>Cross-references within the Cultural Musings platform.</b> This module assumes but does not
+reproduce Part I's doctrinal groundwork and its D1 (neuroscience) and D10 (medical sciences)
+appendices, which this module deliberately extends rather than repeats; it also assumes Part III's
+fifteen-section EQ framework and its four handed-forward questions (RQ I06, I09, I10, I11), which
+this module's Sections 5, 8, 6-7, and 11 respectively supply with specific physiological measurement
+pathways.</li>
+</ol>
+
+<h2 class="sec">Glossary of Terms Introduced in Part IV</h2>
+<table class="glossary">
+<tr><th>Term</th><th>Working definition as used in this module</th></tr>
+<tr><td>Survival circuit (LeDoux)</td><td>A phylogenetically conserved neural circuit driving defensive response, distinguished from the higher-order, working-memory-dependent subjective feeling it typically but not necessarily accompanies (Section 1).</td></tr>
+<tr><td>Constructed emotion</td><td>Barrett's account of emotion as built, moment to moment, from core affect, interoceptive signal, and conceptual/contextual knowledge, rather than triggered as a fixed discrete package (Section 2).</td></tr>
+<tr><td>Embodied simulation</td><td>Gallese's proposal that understanding another's action or emotion involves automatic, non-inferential activation of one's own corresponding sensorimotor and interoceptive representations (Section 3).</td></tr>
+<tr><td>Interoceptive prediction error</td><td>The mismatch between the brain's predicted and actual afferent bodily signal, proposed by Seth's framework as a core computational event in felt emotion (Section 4).</td></tr>
+<tr><td>Interoceptive accuracy</td><td>An individual's objectively measured ability to detect internal bodily signals (e.g., heartbeat), distinguished from self-reported interoceptive sensibility (Section 4.1).</td></tr>
+<tr><td>Wanting / liking</td><td>Berridge's dissociation between dopaminergic incentive salience (wanting) and opioid/endocannabinoid-mediated hedonic pleasure (liking) within reward circuitry (Section 6.1).</td></tr>
+<tr><td>Being moved (Vessel)</td><td>A category of intense, self-relevant aesthetic experience associated with distinctive default mode network co-activation, distinguished from merely liking a stimulus (Section 7).</td></tr>
+<tr><td>Procedural chunking</td><td>Graybiel's term for the basal ganglia's consolidation of individually learned movement elements into a single, more efficiently executed motor unit (Section 9).</td></tr>
+<tr><td>FACS action unit</td><td>An individually identifiable, anatomically defined facial muscle movement within Ekman and Friesen's coding system (Section 10).</td></tr>
+<tr><td>Hyperscanning</td><td>Simultaneous neuroimaging of two or more interacting individuals, used to measure genuine inter-brain coupling rather than merely parallel individual response (Section 13).</td></tr>
+<tr><td>Cognitive reserve</td><td>Stern's construct describing sustained engagement's association with later clinical dementia onset relative to underlying neuropathological burden (Section 20).</td></tr>
+<tr><td>Entropic brain hypothesis</td><td>Carhart-Harris's proposal that psychedelics increase neural entropy and reduce default-mode-network dominance, offered here only as a cautious comparative framework (Section 21).</td></tr>
+<tr><td>Precision-weighting</td><td>Within Friston's predictive-coding formalism, the confidence assigned to a given prediction at a given hierarchical level, proposed here as a formal model of aesthetic distance (Section 23).</td></tr>
+</table>
+
+<h2 class="sec">Consolidated Research Register — Part IV</h2>
+<p style="color:var(--text-dim);">Twenty-five open questions, numbered N01 through N25, to
+distinguish this module's register from Part I's RQ01–RQ60, Part II's H01–H15, and Part III's
+I01–I15 and SP01–SP series. Consolidated here for visibility; see each section above for the
+complete question and status.</p>
+<ol class="reglist">
+<li>RQ N01 — Expert-elicitation mapping of sthāyibhāva against Panksepp and LeDoux frameworks (Section 1)</li>
+<li>RQ N02 — Vibhāva-context manipulation testing constructionist versus discrete-emotion predictions (Section 2)</li>
+<li>RQ N03 — EEG mu-suppression comparing trained performers and naive spectators (Section 3)</li>
+<li>RQ N04 — Interoceptive accuracy as a predictor of camatkāra independent of general EQ (Section 4)</li>
+<li>RQ N05 — Multi-channel psychophysiology mapping sāttvika-bhāva to autonomic signal by rasa (Section 5)</li>
+<li>RQ N06 — fMRI test of hedonic-hotspot versus incentive-salience signal underlying camatkāra (Section 6)</li>
+<li>RQ N07 — Default mode network co-activation tracking camatkāra intensity (Section 7)</li>
+<li>RQ N08 — Direct psychophysiological resolution of RQ I09's mechanism-dissociation question (Section 8)</li>
+<li>RQ N09 — Behavioural-kinematic test of basal-ganglia chunking in karaṇa sequence learning (Section 9)</li>
+<li>RQ N10 — FACS scoring of the nine rasas' facial action-unit signatures (Section 10)</li>
+<li>RQ N11 — fMRI replication of RQ I06's alexithymia prediction with insula/ACC specificity (Section 11)</li>
+<li>RQ N12 — Direct Calvo-Merino paradigm replication with karaṇa-trained dancers (Section 12)</li>
+<li>RQ N13 — EEG hyperscanning test of coupled-oscillator sahṛdaya (Section 13)</li>
+<li>RQ N14 — Naturalistic live-performance replication of laboratory neural findings (Section 14)</li>
+<li>RQ N15 — Field study of pre-performance arousal predicting doṣa-category faults (Section 16)</li>
+<li>RQ N16 — Longitudinal structural-MRI tracking of karaṇa training's neuroplastic effects (Section 17)</li>
+<li>RQ N17 — Proprioceptive and facial-precision expertise comparison testing the aṅga/upāṅga distinction (Section 18)</li>
+<li>RQ N18 — Sleep-dependent consolidation advantage in distributed karaṇa practice (Section 19)</li>
+<li>RQ N19 — Longitudinal cognitive-reserve comparison in lifelong karaṇa-trained dancers (Section 20)</li>
+<li>RQ N20 — Network-integration comparison of camatkāra against entropic-brain psychedelic signatures (Section 21)</li>
+<li>RQ N21 — Cross-cultural fMRI test of universal versus culturally-scaffolded rasa processing (Section 22)</li>
+<li>RQ N22 — Computational precision-weighting model of sādhāraṇīkaraṇa fit to empirical data (Section 23)</li>
+<li>RQ N23 — Chronobiological test of the brāhma-muhūrta practice-timing convention (Section 24)</li>
+<li>RQ N24 — Twin-study heritability of karaṇa-specific motor-sequence acquisition (Section 26)</li>
+<li>RQ N25 — Motion-capture-based digital karaṇa training against video and in-person instruction (Section 27)</li>
+</ol>
+
+</div>
+</body>
+</html>
